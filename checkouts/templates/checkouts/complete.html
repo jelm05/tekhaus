@@ -1,0 +1,30 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    {% if checkout %}
+
+        <h1>
+          <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a>
+{#            <a href="/">{{ checkout.student }}</a>#}
+        </h1>
+        <p>Borrowed: {{ checkout.borrow_date }}</p>
+        <p>Due date: {{ checkout.due_date }}</p>
+    {% else %}
+        <p>This checkout doesn't exist.</p>
+    {% endif %}
+
+    {% if equipment %}
+
+        {% for eq in equipment %}
+            <p>{{ eq }}</p>
+        {% endfor %}
+
+    {% else %}
+        <p>There is no associated equipment.</p>
+    {% endif %}
+
+{% endblock %}
+
+
+

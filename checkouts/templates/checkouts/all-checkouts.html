@@ -1,0 +1,58 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    <h1>All Checkouts</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Equipment</th>
+                <th>Borrow Date</th>
+                <th>Due Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if all_checkouts %}
+                {% for checkout in all_checkouts %}
+
+                    <tr>
+                        <td>
+                            <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a>
+                        </td>
+                        {# This returns a query set: #}
+                        <td>
+                            {% for equipment in checkout.student.current_equipment.all %}
+                                {{ equipment }}<br />
+                            {% endfor %}
+                        </td>
+                        <td>{{ checkout.borrow_date }}</td>
+                        <td>{{ checkout.due_date }}</td>
+
+                        {% load overdue_calculations %}
+                        <td>
+                        {% if checkout.due_date|overdue == True %}
+                            <div class="alert alert-danger" role="alert">OVERDUE {{ checkout.due_date|overdue_days}} DAYS</div>
+                        {% elif checkout.due_date|overdue == False %}
+                            <div class="alert alert-success" role="alert">All good, {{ checkout.due_date|overdue_days}} days left</div>
+                        {% endif %}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+
+
+            {% else %}
+                <p>No checkouts available.</p>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,35 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    {% if equipment %}
+        <h1>{{ equipment.name }}</h1>
+
+        {% if not equipment.current_user  %}
+            <h2>Available: {{ equipment.availability }}</h2>
+        {% else %}
+            <h2>Current User:
+                <a href="{% url 'student_detail' equipment.current_user.school_id %}">{{ equipment.current_user }}</a>
+            </h2>
+        {% endif %}
+
+        <p>{{ equipment.category|title }}</p>
+        <p>Serial Number: {{ equipment.serial_num }}</p>
+        <p>Description: {{ equipment.desc }}</p>
+        <p>Details: {{ equipment.details }}</p>
+
+        {# Without .all at the end, it will always return true because the field exists #}
+        {% if not equipment.past_checkouts.all  %}
+            <p>This piece of equipment has not been checked out yet.</p>
+        {% else %}
+            <p>{{ equipment.past_checkouts }}</p>
+        {% endif %}
+
+    {% else %}
+        <p>This piece of equipment doesn't exist.</p>
+    {% endif %}
+
+{% endblock %}
+
+
+

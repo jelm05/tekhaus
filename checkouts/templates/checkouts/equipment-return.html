@@ -1,0 +1,79 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    <h1>Select a Checkout to Return</h1>
+
+    {% if form.errors %}
+        <ol>
+        {% for error in form.errors %}
+            <li><strong>{{ error|escape }}</strong></li>
+        {% endfor %}
+        </ol>
+    {% endif %}
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Equipment</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Return</th>
+                <th>Confirm</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if all_checkouts %}
+                {% for checkout in all_checkouts %}
+
+                    <tr>
+                        <td>
+                            <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a>
+                        </td>
+                        <td>
+                            {% for equipment in checkout.student.current_equipment.all %}
+                                {{ equipment }}<br />
+                            {% endfor %}
+                        </td>
+
+                        <td>{{ checkout.due_date }}</td>
+
+                        {% load overdue_calculations %}
+                        <td>
+                        {% if checkout.due_date|overdue == True %}
+                            <div class="alert alert-danger" role="alert">OVERDUE {{ checkout.due_date|overdue_days}} DAYS</div>
+                        {% elif checkout.due_date|overdue == False %}
+                            <div class="alert alert-success" role="alert">All good, {{ checkout.due_date|overdue_days}} days left</div>
+                        {% endif %}
+                        </td>
+
+
+
+                            <form class="equipment-return" method="post">
+                                {% csrf_token %}
+
+                                <td>
+                                    <input id="check_in" name="checkout_id" value="{{ checkout.id }}" type="checkbox">
+                                </td>
+
+                                <td>
+                                    <button type="submit" class="btn btn-primary">Return</button>
+                                </td>
+                            </form>
+                    </tr>
+
+                {% endfor %}
+
+
+
+            {% else %}
+                <p>No checkouts available.</p>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+

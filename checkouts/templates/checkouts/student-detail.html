@@ -1,0 +1,28 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    {% if student %}
+        <h1>{{ student.first_name }} {{ student.last_name }}</h1>
+        <p>School ID: {{ student.school_id }}</p>
+        <p>Expected Graduation: {{ student.grad_year }}</p>
+    {% else %}
+        <p>This student doesn't exist.</p>
+    {% endif %}
+
+    {% if current_equipment %}
+
+        <p>Current Equipment:</p>
+
+        {% for equipment in current_equipment %}
+            <p>{{ equipment }}</p>
+        {% endfor %}
+
+    {% else %}
+        <p>There is no associated equipment.</p>
+    {% endif %}
+
+{% endblock %}
+
+
+

@@ -1,0 +1,44 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    <h1>All Equipment</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Serial Number</th>
+                <th>Description</th>
+                <th>Details</th>
+                <th>Availability</th>
+                <th>Current User</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if all_equipment %}
+                {% for equipment in all_equipment %}
+                    <tr></tr>
+                        <td>
+                            <a href="{% url 'equipment_detail' equipment.id %}">{{ equipment.name }}</a>
+                        </td>
+                        <td>{{ equipment.category|title }}</td>
+                        <td>{{ equipment.serial_num }}</td>
+                        <td>{{ equipment.desc }}</td>
+                        <td>{{ equipment.details }}</td>
+                        <td>{{ equipment.availability }}</td>
+                        <td>{{ equipment.current_user }}</td>
+
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <p>No equipment available.</p>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+

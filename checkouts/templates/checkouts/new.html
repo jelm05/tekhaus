@@ -1,0 +1,29 @@
+{% extends 'checkouts/base.html' %}
+
+{#{% block extrahead %}#}
+{#    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js" />#}
+{#{% endblock %}#}
+
+{% block css %}
+    {{ form.media.css }}
+{% endblock %}
+
+{% block content %}
+    {#  For select2 widget  #}
+    {{ form.media }}
+
+    <form class="new-checkout" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {#  For select2 widget  #}
+    {{ form.media.js }}
+
+{% endblock %}
+
+
+
+
+
