@@ -1,4 +1,4 @@
-#!/Users/jelm/Desktop/tekhaus/venv/bin/python
+#!/Users/jelm/Documents/tekhaus/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="" />
+    <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/tekhaus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tekhaus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate.csh" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate.csh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate.fish" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate.fish" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/easy_install" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/easy_install" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/easy_install-3.7" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/easy_install-3.7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/pip3.7" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3.7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/sqlformat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/sqlformat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/contrib/postgres/lookups.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/contrib/postgres/lookups.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/core/management/commands/migrate.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/core/management/commands/migrate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/backends/ddl_references.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/backends/ddl_references.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/setuptools-40.8.0-py3.7.egg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/setuptools-40.8.0-py3.7.egg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlparse-0.3.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlparse-0.3.0.dist-info/RECORD" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,13 +32,18 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1OnWGAEx7X6IzvTnk4et1aH2wTT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Shelf.Project.Settings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -88,11 +114,26 @@
       <workItem from="1572472546000" duration="4210000" />
       <workItem from="1572477047532" duration="50000" />
       <workItem from="1572477424321" duration="30000" />
-      <workItem from="1572477495644" duration="119000" />
+      <workItem from="1572477495644" duration="1541000" />
+      <workItem from="1573586914637" duration="436000" />
+      <workItem from="1573587364994" duration="720000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
