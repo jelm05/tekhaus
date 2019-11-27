@@ -11,21 +11,49 @@ class NewCheckoutForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(NewCheckoutForm, self).__init__(*args, **kwargs)
         # self.fields["equipment_to_lend"].widget = forms.widgets.ModelChoiceField()
-        self.fields["equipment_to_lend"].queryset = Equipment.objects.filter(availability=True)
+        self.fields["cameras"].queryset = Equipment.objects.filter(category='camera', availability=True)
+        self.fields["lights"].queryset = Equipment.objects.filter(category='light', availability=True)
+        self.fields["computers"].queryset = Equipment.objects.filter(category='computer', availability=True)
+        self.fields["projectors"].queryset = Equipment.objects.filter(category='projector', availability=True)
+        self.fields["audio"].queryset = Equipment.objects.filter(category='audio', availability=True)
+        self.fields["misc"].queryset = Equipment.objects.filter(category='misc', availability=True)
 
     class Meta:
         model = Checkout
-        fields = ['student', 'equipment_to_lend', 'borrow_date', 'due_date']
+        fields = ['student', 'cameras', 'lights', 'computers', 'projectors', 'audio', 'misc', 'borrow_date', 'due_date']
 
         widgets = {
-            'equipment_to_lend': Select2MultipleWidget(),
+            'cameras': Select2MultipleWidget(),
+            'lights': Select2MultipleWidget(),
+            'computers': Select2MultipleWidget(),
+            'projectors': Select2MultipleWidget(),
+            'audio': Select2MultipleWidget(),
+            'misc': Select2MultipleWidget(),
         }
 
         labels = {
-            'equipment_to_lend': 'Equipment',
+            'cameras': 'Cameras',
         }
 
 
+class AddNewEquipmentForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(AddNewEquipmentForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = Equipment
+        exclude = ['availability', 'current_user', 'past_checkouts']
+        fields = ['name', 'category', 'desc', 'details', 'serial_num']
+
+
+class AddNewStudentForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(AddNewStudentForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = Student
+        exclude = ['current_equipment', 'past_equipment']
+        fields = ['school_id', 'first_name', 'last_name', 'grad_year']
 
 
 class EquipmentReturnForm(forms.Form):

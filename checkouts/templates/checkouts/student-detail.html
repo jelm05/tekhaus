@@ -22,6 +22,10 @@
         <p>There is no associated equipment.</p>
     {% endif %}
 
+    <a href="{% url 'edit_student' student.school_id %}">
+        <button type="button" class="btn btn-primary">Edit</button>
+    </a>
+
 {% endblock %}
 
 

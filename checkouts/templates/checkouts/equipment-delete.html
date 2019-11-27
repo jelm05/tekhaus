@@ -1,0 +1,36 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    {% if equipment %}
+
+        <h1>Delete {{ equipment.name }}?</h1>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            Are you sure you want to delete this piece of equipment?
+{#            <input type="submit" value="Yes"/>#}
+            <button type="submit" value="Yes" class="btn btn-danger">Delete</button>
+
+            <a href="{% url 'equipment_detail' equipment.pk %}">
+                <button type="button" class="btn btn-secondary">Cancel</button>
+            </a>
+
+        </form>
+
+    {% else %}
+        <p>This piece of equipment doesn't exist.</p>
+    {% endif %}
+
+{#    <a href="{% url 'edit_equipment' equipment.pk %}">#}
+{#        <button type="button" class="btn btn-primary">Edit</button>#}
+{#    </a>#}
+{##}
+{#    <a href="{% url 'delete_equipment' equipment.pk %}">#}
+{#        <button type="button" class="btn btn-danger">Delete</button>#}
+{#    </a>#}
+
+{% endblock %}
+
+
+

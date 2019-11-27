@@ -2,26 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/tekhaus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tekhaus.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-equipment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-student.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-equipment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-student.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate.csh" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate.csh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate.fish" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/activate.fish" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/django-admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/easy_install" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/easy_install" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/easy_install-3.7" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/easy_install-3.7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip3.7" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/pip3.7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/sqlformat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/sqlformat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/contrib/postgres/lookups.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/contrib/postgres/lookups.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/core/management/commands/migrate.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/core/management/commands/migrate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/backends/ddl_references.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/backends/ddl_references.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/setuptools-40.8.0-py3.7.egg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/setuptools-40.8.0-py3.7.egg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlparse-0.3.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlparse-0.3.0.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/student-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/student-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tekhaus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tekhaus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,14 +34,26 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1OnWGAEx7X6IzvTnk4et1aH2wTT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/checkouts/templates/registration" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="Shelf.Project.Settings" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/checkouts/templates/registration" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/checkouts/templates" />
+      <recent name="$PROJECT_DIR$/checkouts/templates/checkouts/registration" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -116,12 +126,22 @@
       <workItem from="1572477424321" duration="30000" />
       <workItem from="1572477495644" duration="1541000" />
       <workItem from="1573586914637" duration="436000" />
-      <workItem from="1573587364994" duration="720000" />
+      <workItem from="1573587364994" duration="2968000" />
+      <workItem from="1573690313329" duration="3479000" />
+      <workItem from="1573948227441" duration="7556000" />
+      <workItem from="1574120846299" duration="5216000" />
+      <workItem from="1574126935750" duration="1334000" />
+      <workItem from="1574376824089" duration="7469000" />
+      <workItem from="1574528230100" duration="2000" />
+      <workItem from="1574795548917" duration="11173000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -1,0 +1,33 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    {% block title %}
+        <h1>Dashboard</h1>
+     {% endblock %}
+
+        {% if user.is_authenticated %}
+          <div style="text-align:center">Hi {{ user.username }}! Welcome to TEKHAUS!!</div>
+
+          <p>
+              <a href="{% url 'logout' %}">logout</a>
+          </p>
+
+        {% endif %}
+
+
+{#        {% if user.is_authenticated %}#}
+{#          <div style="text-align:center">Hi {{ user.username }}! Welcome to TEKHAUS!!</div>#}
+{##}
+{#          <p>#}
+{#              <a href="{% url 'logout' %}">logout</a>#}
+{#          </p>#}
+{#        {% else %}#}
+{#          <p>You are not logged in</p>#}
+{#          <a href="{% url 'login' %}">login</a>#}
+{#        {% endif %}#}
+
+{% endblock %}
+
+
+

@@ -1,0 +1,16 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+
+    <h1>Edit this piece of equipment</h1>
+
+    <form class="edit-equipment" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+
+{% endblock %}
+
+
+
