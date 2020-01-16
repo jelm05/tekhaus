@@ -11,7 +11,7 @@ class Student(models.Model):
 
     def __str__(self):
         # return "%s %s" % (self.first_name, self.last_name)
-        return "{} {} : {}".format(self.first_name, self.last_name, self.school_id)
+        return "{} {} ({})".format(self.first_name, self.last_name, self.school_id)
 
     class Meta:
         verbose_name = 'Student'
@@ -37,7 +37,7 @@ class Equipment(models.Model):
     past_checkouts = models.ManyToManyField('Checkout', related_name='past_checkouts', blank=True)
 
     def __str__(self):
-        return "{}, {} : {}".format(self.name, self.category, self.serial_num)
+        return "{}".format(self.name)
 
     class Meta:
         verbose_name = 'Equipment'
@@ -79,6 +79,10 @@ class Checkout(models.Model):
     borrow_date = models.DateField(null=False, blank=False, default=datetime.today, verbose_name='Date Borrowed')
     due_date = models.DateField(null=False, blank=False, default=datetime.today, verbose_name='Due Date')
     completed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "Checkout #{}".format(self.id)
+
 
 # class Checkout(models.Model):
 #     student = models.ForeignKey(Student, on_delete=models.CASCADE)

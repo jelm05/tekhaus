@@ -23,8 +23,28 @@
                         </td>
                         {# This returns a query set: #}
                         <td>
-                            {% for equipment in checkout.student.current_equipment.all %}
-                                {{ equipment }}<br />
+                            {% for cameras in checkout.cameras.all %}
+                                {{ cameras }}<br />
+                            {% endfor %}
+
+                            {% for lights in checkout.lights.all %}
+                                {{ lights }}<br />
+                            {% endfor %}
+
+                            {% for computers in checkout.computers.all %}
+                                {{ computers }}<br />
+                            {% endfor %}
+
+                            {% for projectors in checkout.projectors.all %}
+                                {{ projectors }}<br />
+                            {% endfor %}
+
+                            {% for audio in checkout.audio.all %}
+                                {{ audio }}<br />
+                            {% endfor %}
+
+                            {% for misc in checkout.misc.all %}
+                                {{ misc }}<br />
                             {% endfor %}
                         </td>
                         <td>{{ checkout.borrow_date }}</td>

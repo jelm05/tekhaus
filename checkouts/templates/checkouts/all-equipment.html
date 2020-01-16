@@ -19,7 +19,7 @@
         <tbody>
             {% if all_equipment %}
                 {% for equipment in all_equipment %}
-                    <tr></tr>
+                    <tr>
                         <td>
                             <a href="{% url 'equipment_detail' equipment.id %}">{{ equipment.name }}</a>
                         </td>
@@ -29,7 +29,6 @@
                         <td>{{ equipment.details }}</td>
                         <td>{{ equipment.availability }}</td>
                         <td>{{ equipment.current_user }}</td>
-
                     </tr>
                 {% endfor %}
             {% else %}

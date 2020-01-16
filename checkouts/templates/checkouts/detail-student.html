@@ -26,6 +26,10 @@
         <button type="button" class="btn btn-primary">Edit</button>
     </a>
 
+    <a href="{% url 'delete_student' student.school_id %}">
+        <button type="button" class="btn btn-danger">Delete</button>
+    </a>
+
 {% endblock %}
 
 

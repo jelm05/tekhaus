@@ -28,6 +28,11 @@ def all_checkouts(request):
     return HttpResponse(template.render(context, request))
 
 
+def checkout_detail(request, pk):
+    checkout = get_object_or_404(Checkout, pk=pk)
+    return render(request, 'checkouts/detail-checkout.html', context={'checkout': checkout})
+
+
 @login_required()
 def new_checkout(request):
     if request.method == 'POST':
@@ -56,15 +61,6 @@ def new_checkout(request):
                 equipment.current_user = checkout_student
                 equipment.availability = False
                 equipment.save()
-
-                # print(equipment)
-                # print(type(equipment))
-
-            # Not associating current user with equipment
-            # selected_equipment.update(current_user=checkout_student)
-
-            # THIS HAS TO BE BELOW THE FOR LOOP
-            # selected_equipment.update(availability=False)
 
             new_checkout.save()
             return redirect('complete', pk=new_checkout.pk)
@@ -130,8 +126,12 @@ def past_checkouts(request):
 @login_required()
 def all_students(request):
     all_students = Student.objects.order_by('last_name')
+    past_checkouts = Checkout.objects.order_by('-borrow_date').filter(completed=True)
     template = loader.get_template('checkouts/all-students.html')
-    context = {'all_students': all_students}
+    context = {
+        'all_students': all_students,
+        'past_checkouts': past_checkouts
+    }
     return HttpResponse(template.render(context, request))
 
 
@@ -139,7 +139,7 @@ def all_students(request):
 def student_detail(request, school_id):
     student = get_object_or_404(Student, school_id=school_id)
     current_equipment = student.current_equipment.all()
-    return render(request, 'checkouts/student-detail.html', context={'student': student, 'current_equipment': current_equipment})
+    return render(request, 'checkouts/detail-student.html', context={'student': student, 'current_equipment': current_equipment})
 
 
 @login_required()
@@ -174,6 +174,18 @@ def edit_student(request, school_id):
     return render(request, 'checkouts/edit-student.html', {'form': form})
 
 
+@login_required()
+def delete_student(request, school_id):
+    student = get_object_or_404(Student, school_id=school_id)
+
+    if request.method == 'POST':
+        student.delete()
+        messages.success(request, "Student successfully deleted.")
+        return redirect('all_students')
+
+    return render(request, 'checkouts/delete-student.html', context={'student': student})
+
+
 # EQUIPMENT VIEWS
 def all_equipment(request):
     all_equipment = Equipment.objects.all()
@@ -184,7 +196,7 @@ def all_equipment(request):
 
 def equipment_detail(request, pk):
     equipment = get_object_or_404(Equipment, pk=pk)
-    return render(request, 'checkouts/equipment-detail.html', context={'equipment': equipment})
+    return render(request, 'checkouts/detail-equipment.html', context={'equipment': equipment})
 
 
 @login_required()
@@ -228,7 +240,7 @@ def delete_equipment(request, pk):
         messages.success(request, "Equipment successfully deleted.")
         return redirect('all_equipment')
 
-    return render(request, 'checkouts/equipment-delete.html', context={'equipment': equipment})
+    return render(request, 'checkouts/delete-equipment.html', context={'equipment': equipment})
 
 
 

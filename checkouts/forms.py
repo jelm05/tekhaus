@@ -7,6 +7,7 @@ from .models import Checkout
 
 from django_select2.forms import (ModelSelect2Widget, Select2Widget, Select2MultipleWidget)
 
+
 class NewCheckoutForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(NewCheckoutForm, self).__init__(*args, **kwargs)

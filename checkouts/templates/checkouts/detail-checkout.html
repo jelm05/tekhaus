@@ -1,0 +1,56 @@
+{% extends 'checkouts/base.html' %}
+
+{% block content %}
+    {% if checkout %}
+        <h1>{{ checkout }}</h1>
+        <p>
+            <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a>
+        </p>
+        <p>Borrowed: {{ checkout.borrow_date }}</p>
+        <p>Due: {{ checkout.due_date }}</p>
+
+        <p>Equipment borrowed:</p>
+        <ul>
+            {% for eq in checkout.cameras.all %}
+                <li>
+                    <a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a>
+                </li>
+            {% endfor %}
+
+            {% for eq in checkout.lights.all %}
+                <li>
+                    <a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a>
+                </li>
+            {% endfor %}
+
+            {% for eq in checkout.computers.all %}
+                <li>
+                    <a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a>
+                </li>
+            {% endfor %}
+
+            {% for eq in checkout.projectors.all %}
+                <li>
+                    <a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a>
+                </li>
+            {% endfor %}
+
+            {% for eq in checkout.audio.all %}
+                <li>
+                    <a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a>
+                </li>
+            {% endfor %}
+
+            {% for eq in checkout.misc.all %}
+                <li>
+                    <a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No details for this checkout.</p>
+    {% endif %}
+{% endblock %}
+
+
+

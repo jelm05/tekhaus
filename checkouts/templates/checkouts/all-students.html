@@ -12,7 +12,7 @@
                 <th>School ID</th>
                 <th>Graduation Year</th>
                 <th>Current Equipment</th>
-                <th>Past Equipment</th>
+                <th>Most Recent Checkouts</th>
             </tr>
         </thead>
         <tbody>
@@ -35,11 +35,23 @@
                              {% endif %}
                         </td>
                         <td>
-                            {% if not student.past_equipment.all %}
-                                <p>No past checkouts.</p>
-                            {% else %}
-                                {{ student.past_equipment.all }}
+{#                            {% if not student.past_equipment.all %}#}
+{#                                <p>No past checkouts.</p>#}
+{#                            {% else %}#}
+{#                                {{ student.past_equipment.all }}#}
+{#                            {% endif %}#}
+
+                            {% if past_checkouts %}
+                                {% for checkout in past_checkouts|slice:":5" %}
+
+                                    {% if student == checkout.student %}
+                                        <a href="{% url 'checkout_detail' checkout.id %}">{{ checkout }}</a><br/>
+                                    {% endif %}
+
+                                {% endfor %}
                             {% endif %}
+
+
                         </td>
                     </tr>
                 {% endfor %}

@@ -2,26 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-equipment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-student.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-equipment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-student.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/static/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/delete-student.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a20cf1c-5b5c-4287-89dd-245d1e8e2409.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9a20cf1c-5b5c-4287-89dd-245d1e8e2409.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-equipment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-equipment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-students.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-students.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/student-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/student-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-equipment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/delete-equipment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-equipment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/past-checkouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/past-checkouts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/student-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-student.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tekhaus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tekhaus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/urls.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,10 +40,15 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/checkouts/templates/registration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -54,18 +62,6 @@
       <recent name="$PROJECT_DIR$/checkouts/templates" />
       <recent name="$PROJECT_DIR$/checkouts/templates/checkouts/registration" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="tekhaus" type="Python.DjangoServer" factoryName="Django server">
@@ -92,6 +88,18 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -133,7 +141,13 @@
       <workItem from="1574126935750" duration="1334000" />
       <workItem from="1574376824089" duration="7469000" />
       <workItem from="1574528230100" duration="2000" />
-      <workItem from="1574795548917" duration="11173000" />
+      <workItem from="1574795548917" duration="11889000" />
+      <workItem from="1575053005983" duration="2000" />
+      <workItem from="1575055411409" duration="8502000" />
+      <workItem from="1576602902705" duration="1408000" />
+      <workItem from="1577984852291" duration="7000" />
+      <workItem from="1578007486974" duration="1307000" />
+      <workItem from="1578260538460" duration="5000" />
     </task>
     <servers />
   </component>
