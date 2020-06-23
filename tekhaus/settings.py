@@ -24,18 +24,32 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vuj2zs%+o++ok-e^+e^1oj6r#lb--nxwixblrl3mk6h7j(cdsd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# STATIC FILES wont be handled by Django when DEBUG is False
+# Django expects the production environment/server to handle static files
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost'
+]
 
+
+# ONLY FOR DEVELOPMENT
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_HOST = ''
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = 'Tekhaus Team <admin@tekhaus.tech>'
 
 # Application definition
-
 INSTALLED_APPS = [
     'checkouts.apps.CheckoutsConfig',
     'django_select2',
     # 'jquery',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +57,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -147,7 +163,8 @@ USE_TZ = True
 
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ( os.path.join('static'), )
+# STATICFILES_DIRS = (os.path.join('static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 LOGIN_REDIRECT_URL = 'dashboard'
 

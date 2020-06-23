@@ -1,18 +1,18 @@
-{% extends 'checkouts/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-    <h1>All Equipment</h1>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+        <h2 class="h2">All Equipment</h2>
+    </div>
 
-    <table class="table table-bordered">
+    <table class="table  table-striped">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Category</th>
                 <th>Serial Number</th>
-                <th>Description</th>
-                <th>Details</th>
-                <th>Availability</th>
+                <th>Status</th>
                 <th>Current User</th>
             </tr>
         </thead>
@@ -25,9 +25,13 @@
                         </td>
                         <td>{{ equipment.category|title }}</td>
                         <td>{{ equipment.serial_num }}</td>
-                        <td>{{ equipment.desc }}</td>
-                        <td>{{ equipment.details }}</td>
-                        <td>{{ equipment.availability }}</td>
+                        <td>
+                            {% if equipment.availability == True %}
+                                Currently Available
+                        </td>
+                            {% else %}
+                                Unavailable
+                            {% endif %}
                         <td>{{ equipment.current_user }}</td>
                     </tr>
                 {% endfor %}

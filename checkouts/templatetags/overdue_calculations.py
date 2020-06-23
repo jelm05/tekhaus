@@ -3,6 +3,7 @@ from django import template
 
 register = template.Library()
 
+
 @register.filter
 def overdue(due_date):
     # due_date is <class 'datetime.date'>
@@ -16,7 +17,7 @@ def overdue(due_date):
         return True
 
     # NOT OVERDUE:
-    elif due_date > today:
+    elif due_date >= today:
         return False
 
 
@@ -31,7 +32,12 @@ def overdue_days(due_date):
         return diff.days
 
     # NOT OVERDUE:
-    elif due_date > today:
+    elif due_date >= today:
         diff = due_date - today
         return diff.days
 
+
+# @register.filter('return_date_calculator')
+# def return_date_calc(return_date, due_date):
+#     days = return_date - due_date
+#     return days

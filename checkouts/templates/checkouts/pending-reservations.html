@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+        <h2 class="h2">Pending Reservations</h2>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Requester</th>
+                <th>Equipment</th>
+                <th>Request Date</th>
+                <th>Due Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if pending_reservations %}
+                {% for reservation in pending_reservations %}
+
+                    <tr>
+                        <td>
+                            <a href="{% url 'reservation_detail' reservation.id %}">{{ reservation.id }}</a><br/>
+                        </td>
+                        <td>
+                            <a href="{% url 'student_detail' reservation.requested_by.id %}">{{ reservation.requested_by }}</a>
+                        </td>
+                        <td>
+
+                            {% for cameras in reservation.cameras.all %}
+                                <a href="{% url 'equipment_detail' cameras.id %}">
+                                    {{ cameras }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for lights in reservation.lights.all %}
+                                <a href="{% url 'equipment_detail' lights.id %}">
+                                    {{ lights }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for computers in reservation.computers.all %}
+                                <a href="{% url 'equipment_detail' computers.id %}">
+                                    {{ computers }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for projectors in reservation.projectors.all %}
+                                <a href="{% url 'equipment_detail' projectors.id %}">
+                                    {{ projectors }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for audio in reservation.audio.all %}
+                                <a href="{% url 'equipment_detail' audio.id %}">
+                                    {{ audio }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for misc in reservation.misc.all %}
+                               <a href="{% url 'equipment_detail' misc.id %}">
+                                    {{ misc }}
+                                </a><br />
+                            {% endfor %}
+
+                        </td>
+                        <td>{{ reservation.request_date }}</td>
+                        <td>{{ reservation.due_date }}</td>
+                        <td>
+                            <a href="{% url 'accept_pending_reservation' reservation.id %}">
+                                <button class="btn btn-primary">Accept</button>
+                            </a>
+                            <a href="{% url 'deny_pending_reservation' reservation.id %}">
+                                <button class="btn btn-danger">Deny</button>
+                            </a>
+                        </td>
+
+
+                    </tr>
+
+
+                {% endfor %}
+
+            {% else %}
+                <p class="alert alert-info">No pending reservations.</p>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+

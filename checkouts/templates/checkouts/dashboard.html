@@ -1,31 +1,224 @@
-{% extends 'checkouts/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
-
-    {% block title %}
-        <h1>Dashboard</h1>
-     {% endblock %}
-
         {% if user.is_authenticated %}
-          <div style="text-align:center">Hi {{ user.username }}! Welcome to TEKHAUS!!</div>
 
-          <p>
-              <a href="{% url 'logout' %}">logout</a>
-          </p>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+            <h2 class="h2">Dashboard</h2>
+            <div style="text-align:center">Hi {{ user.first_name|title }} {{ user.last_name|title }}! Welcome to Tekhaus</div>
+        </div>
+
+        {% else %}
+
+          <p>You are not sign in.</p>
+          <button class="btn btn-primary" href="{% url 'login' %}">Sign In</button>
 
         {% endif %}
 
+    <div class="row row-flex border-bottom mb-3 p-3">
 
-{#        {% if user.is_authenticated %}#}
-{#          <div style="text-align:center">Hi {{ user.username }}! Welcome to TEKHAUS!!</div>#}
-{##}
-{#          <p>#}
-{#              <a href="{% url 'logout' %}">logout</a>#}
-{#          </p>#}
-{#        {% else %}#}
-{#          <p>You are not logged in</p>#}
-{#          <a href="{% url 'login' %}">login</a>#}
-{#        {% endif %}#}
+        <div class="col">
+            <h5 class="card-title">
+                Active Checkouts: {% if active_checkouts %}
+                {{ active_checkouts }}
+                {% else %}
+                0
+                {% endif %}
+            </h5>
+        </div>
+
+        <div class="col">
+            <h5 class="card-title">
+                Active Users: {% if active_users %}
+                {{ active_users }}
+                {% else %}
+                0
+                {% endif %}
+            </h5>
+        </div>
+
+        <div class="col">
+            <h5>Inactive Users: {% if inactive_users %}
+                {{ inactive_users }}
+                {% else %}
+                0
+                {% endif %}
+            </h5>
+        </div>
+    </div>
+
+    <div class="row row-flex">
+
+        <div class="col d-flex">
+            <div class="card flex-fill mb-3 p-md-3 card-btm-border card-shadow-danger border-danger">
+                <h5 class="border-bottom">Overdue Checkouts</h5>
+                <div class="card-body text-center">
+                     <ul class="list-group list-group-flush">
+                        {% if overdue_checkouts %}
+
+                            {% for checkout in overdue_checkouts %}
+                                    <li class="list-group-item">
+                                        {% load overdue_calculations %}
+                                        <a href="{% url 'checkout_detail' checkout.id %}">#{{ checkout.id }} (Overdue {{ checkout.due_date|overdue_days}} Days)</a>:
+                                        <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student.first_name }} {{ checkout.student.last_name }}</a>
+                                    </li>
+                            {% endfor %}
+
+                        {% else %}
+                            <li class="list-group-item">Nothing overdue.</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex">
+            <div class="card flex-fill mb-3 p-md-3 card-btm-border card-shadow-warning border-warning">
+                <h5 class="border-bottom">Checkouts Due Today</h5>
+                <div class="card-body text-center">
+                    <ul class="list-group list-group-flush">
+                        {% if checkouts_due_today %}
+
+                            {% for checkout in checkouts_due_today %}
+                                    <li class="list-group-item">
+                                        <a href="{% url 'checkout_detail' checkout.id %}">#{{ checkout.id }}</a>:
+                                        <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student.first_name }} {{ checkout.student.last_name }}</a>
+                                    </li>
+                            {% endfor %}
+
+                        {% else %}
+                            <li class="list-group-item">Nothing due today.</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col d-flex">
+            <div class="card flex-fill mb-3 p-md-3 card-btm-border card-shadow-success border-success">
+                <h5 class="border-bottom">Accepted Reservations</h5>
+
+                <div class="card-body text-center">
+                <ul class="list-group list-group-flush">
+                    {% if accepted_reservations %}
+
+                        {% for reservation in accepted_reservations %}
+                            <li class="list-group-item">
+                                <a href="{% url 'reservation_detail'  reservation.id %}">#{{ reservation.id }} ({{ reservation.request_date|date:"n/j/y" }})</a>:
+                                <a href="{% url 'student_detail' reservation.requested_by.school_id %}">{{ reservation.requested_by }}</a>
+                            </li>
+                        {% endfor %}
+
+                    {% else %}
+
+                        <li class="list-group-item">No accepted reservations.</li>
+
+                    {% endif %}
+                </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col d-flex">
+            <div class="card flex-fill mb-3 p-md-3 card-btm-border card-shadow-warning border-warning">
+                <h5 class="border-bottom">Reservation Requests</h5>
+                <div class="card-body text-center">
+                    <ul class="list-group list-group-flush">
+
+                        {% if pending_reservations %}
+                            {% for reservation in pending_reservations %}
+                                <li class="list-group-item">
+                                    <a href="{% url 'reservation_detail'  reservation.id %}">#{{ reservation.id }}</a>:
+                                    <a href="{% url 'student_detail' reservation.requested_by.school_id %}">{{ reservation.requested_by }}</a>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            <li class="list-group-item">No requested reservations.</li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col d-flex">
+            <div class="card flex-fill mb-3 p-md-3 card-btm-border card-shadow-success border-success">
+                <h5 class="border-bottom">Recent Checkouts</h5>
+
+                <div class="card-body text-center">
+                <ul class="list-group list-group-flush">
+                    {% if recent_checkouts %}
+
+                        {% for checkout in recent_checkouts %}
+                            <li class="list-group-item">
+                                <a href="{% url 'checkout_detail' checkout.id %}">#{{ checkout.id }}</a>:
+                                <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student.first_name }} {{ checkout.student.last_name }}</a>
+                            </li>
+                        {% endfor %}
+
+                    {% else %}
+
+                        <li class="list-group-item">No active checkouts.</li>
+
+                    {% endif %}
+                </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col d-flex">
+            <div class="card flex-fill mb-3 p-md-3 card-btm-border card-shadow-warning border-warning">
+                <h5 class="border-bottom">Unavailable Equipment</h5>
+                <div class="card-body text-center">
+                    <ul class="list-group list-group-flush">
+
+                        {% if unavailable_equipment %}
+                            {% for equipment in unavailable_equipment %}
+                                <li class="list-group-item">
+                                    <a href="{% url 'equipment_detail' equipment.id %}">{{ equipment.name }}</a>:
+                                    <a href="{% url 'student_detail' equipment.current_user.school_id %}">{{ equipment.current_user.first_name }} {{ equipment.current_user.last_name }}</a>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            <li class="list-group-item">All equipment is available.</li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
 
 {% endblock %}
 

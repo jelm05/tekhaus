@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {{ form.media.css }}
+{% endblock %}
+
+{% block content %}
+    {#  For select2 widget  #}
+    {{ form.media }}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+        <h2 class="h2">New Reservation</h2>
+    </div>
+
+    {% if user %}
+
+    <div>
+        <p class="alert alert-info text-center">
+            Only equipment that is currently available and has not yet been reserved can be requested for a checkout.
+            <br>
+            This doesn't guarantee that you'll receive the requested equipment, it's only a request.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+
+            <form class="new-reservation" method="post">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="user">User:</label>
+
+                        <input name="requested_by" class="form-control" disabled required id="id_requested_by" value="{{ user }}">
+
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="borrow_date">When Do You Need the Equipment:</label>
+                        {{ form.request_date }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="cameras">Cameras:</label>
+                        {{ form.cameras }}
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="due_date">When Will You Return the Equipment:</label>
+                        {{ form.due_date }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="lights">Lights:</label>
+                        {{ form.lights }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="computers">Computers:</label>
+                        {{ form.computers }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="projectors">Projectors:</label>
+                        {{ form.projectors }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="audio">Audio:</label>
+                        {{ form.audio }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="misc">Miscellaneous:</label>
+                        {{ form.misc }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="notes">Notes:</label>
+                        {{ form.notes }}
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+
+            {% else %}
+
+                <div>
+                    <p class="alert alert-danger">Something went wrong, there's no associated user for this reservation. Please make this reservation in person.</p>
+                </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+
+
+
+    {#  For select2 widget  #}
+    {{ form.media.js }}
+
+    <!-- Fengyuan Chen's Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".datepicker").datepicker();
+        });
+    </script>
+
+{% endblock %}
+
+
+
+
+

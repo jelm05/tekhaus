@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h2 class="h2">Add New Admin</h2>
+    </div>
+
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endfor %}
+    {% endfor %}
+
+    <form class="add-new-student" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <div class="helptext alert alert-info">Username must be 150 characters or fewer. Letters, digits and @/./+/-/_ only.</div>
+
+            <div class="helptext alert alert-warning">
+                Your password can't be too similar to other personal information or other common passwords, it must contain 8 characters, and it cannot be entirely numeric.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="username" maxlength="150" class="form-control" required="" id="id_username" placeholder="Username">
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="first_name" maxlength="30" class="form-control" id="id_first_name" placeholder="First Name">
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="last_name" maxlength="150" class="form-control" id="id_last_name" placeholder="Last Name">
+        </div>
+
+        <div class="form-group">
+            <input type="email" name="email" maxlength="254" class="form-control" id="id_email" placeholder="Email Address">
+        </div>
+
+        <div class="form-group">
+            <input type="password" name="password1" maxlength="128" class="form-control" required="" id="id_password1" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <input type="password" name="password2" maxlength="128" class="form-control" required="" id="id_password2" placeholder="Confirm Password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add New Admin</button>
+    </form>
+
+{% endblock %}
+

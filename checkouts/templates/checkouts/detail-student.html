@@ -1,34 +1,206 @@
-{% extends 'checkouts/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-    {% if student %}
-        <h1>{{ student.first_name }} {{ student.last_name }}</h1>
-        <p>School ID: {{ student.school_id }}</p>
-        <p>Expected Graduation: {{ student.grad_year }}</p>
-    {% else %}
-        <p>This student doesn't exist.</p>
-    {% endif %}
+    <div class="container">
 
-    {% if current_equipment %}
+    <div class="row mt-4">
 
-        <p>Current Equipment:</p>
+        <div class="col-md-6 d-flex">
 
-        {% for equipment in current_equipment %}
-            <p>{{ equipment }}</p>
+            <div class="card flex-fill">
+
+                {% if student %}
+                    <h5 class="border-bottom p-md-3">{{ student.first_name }} {{ student.last_name }}</h5>
+
+                     <div class="card-body">
+
+                    <h6>User ID:</h6>
+                    <p class="card-text">{{ student.school_id }}</p>
+
+                    <h6>Expected Graduation:</h6>
+                    <p class="card-text">{{ student.grad_year }}</p>
+
+                    <h6>Primary Email: </h6>
+                    <p class="card-text">{{ student.primary_email }}</p>
+
+                    <h6>Secondary Email: </h6>
+                    <p class="card-text">{{ student.secondary_email }}</p>
+
+
+
+                {% else %}
+                    <p class="card-text">This student doesn't exist.</p>
+                {% endif %}
+
+                    </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 d-flex">
+            <div class="card flex-fill">
+
+            <h5 class="border-bottom p-md-3">Current Equipment</h5>
+
+                <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                        {% if current_equipment %}
+                            {% for equipment in current_equipment %}
+                                <li class="list-group-item">
+                                    <a href="{% url 'equipment_detail' equipment.id %}">{{ equipment.name }}</a>
+                                </li>
+                            {% endfor %}
+
+                        {% else %}
+                            <li class="list-group-item">No equipment currently checked out.</li>
+                        {% endif %}
+                        </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row pt-2 pb-3">
+        <div class="col">
+            <a href="{% url 'edit_student' student.school_id %}">
+                <button type="button" class="btn btn-primary">Edit User Details</button>
+            </a>
+
+            <a href="{% url 'delete_student' student.school_id %}">
+                <button type="button" class="btn btn-danger">Delete User</button>
+            </a>
+        </div>
+    </div>
+
+        {% if student.reservation_request %}
+        <div class="row mt-5 pb-1">
+            <div class="col">
+                {% if student.reservation_request.accepted == True %}
+                    <div class="alert alert-success">
+                        {{ student }} has an accepted reservation request,
+                        <a href="{% url 'reservation_detail' student.reservation_request.id %}">{{ student.reservation_request }}</a>,
+                        for {{ student.reservation_request.request_date }}.<br/>
+                        If this reservation has been processed, mark it complete to remove this notice.
+                    </div>
+                {% else  %}
+                    <div class="alert alert-info">
+                        {{ student }} has a pending reservation request,
+                        <a href="{% url 'reservation_detail' student.reservation_request.id %}">{{ student.reservation_request }}</a>
+                        for {{ student.reservation_request.request_date }}.
+                    </div>
+                {% endif %}
+                </div>
+
+            </div>
+        {% endif %}
+
+
+    <div class="row mt-5 pb-1">
+        <div class="col">
+            <h5 class="border-bottom">Current Checkouts</h5>
+        </div>
+    </div>
+
+<div>
+    <ul class="list-group list-group-flush">
+    {% if current_checkouts %}
+        {% for checkout in current_checkouts %}
+            <li class="list-group-item">
+                <a href="{% url 'checkout_detail' checkout.id %}">{{ checkout }}</a>
+            </li>
         {% endfor %}
+    {% else %}
+        <li class="list-group-item">No current checkouts.</li>
+    {% endif %}
+    </ul>
+</div>
+
+
+<div class="row mt-5 pb-1">
+    <div class="col">
+        <h5 class="border-bottom">Past Checkouts</h5>
+    </div>
+</div>
+
+    {% if user_past_checkouts %}
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Equipment</th>
+                <th>Borrow Date</th>
+                <th>Due Date</th>
+                <th>Return Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                {% for checkout in user_past_checkouts %}
+
+                    <tr>
+                        {# This returns a query set: #}
+
+                        <td>
+                            <a href="{% url 'checkout_detail' checkout.id %}">{{ checkout.id }}</a><br/>
+                        </td>
+
+                        <td>
+                            {% for cameras in checkout.cameras.all %}
+                                <a href="{% url 'equipment_detail' cameras.id %}">{{ cameras.name }}</a><br />
+                            {% endfor %}
+
+                            {% for lights in checkout.lights.all %}
+                                <a href="{% url 'equipment_detail' lights.id %}">{{ lights.name }}</a><br />
+                            {% endfor %}
+
+                            {% for computers in checkout.computers.all %}
+                                <a href="{% url 'equipment_detail' computers.id %}">{{ computers.name }}</a><br />
+                            {% endfor %}
+
+                            {% for projectors in checkout.projectors.all %}
+                                <a href="{% url 'equipment_detail' projectors.id %}">{{ projectors.name }}</a><br />
+                            {% endfor %}
+
+                            {% for audio in checkout.audio.all %}
+                                <a href="{% url 'equipment_detail' audio.id %}">{{ audio.name }}</a><br />
+                            {% endfor %}
+
+                            {% for misc in checkout.misc.all %}
+                                <a href="{% url 'equipment_detail' misc.id %}">{{ misc.name }}</a><br />
+                            {% endfor %}
+                        </td>
+                        <td>{{ checkout.borrow_date }}</td>
+                        <td>{{ checkout.due_date }}</td>
+
+                        <td>{{ checkout.return_date }}</td>
+
+                        {% load return_date_calculator %}
+                        {% if checkout.return_date == checkout.due_date %}
+                            <td class="table-success">Returned On Due Date</td>
+                        {% elif checkout.return_date > checkout.due_date %}
+                            <td class="table-danger">Returned {% return_date_calc checkout.return_date checkout.due_date %} Day(s) Late</td>
+                        {% elif checkout.return_date < checkout.due_date %}
+                            <td class="table-success">Returned {% return_date_calc checkout.return_date checkout.due_date %} Day(s) Early</td>
+                        {% endif %}
+
+                    </tr>
+
+                {% endfor %}
+
+        </tbody>
+    </table>
 
     {% else %}
-        <p>There is no associated equipment.</p>
+        <p>This user has not checked anything out.</p>
     {% endif %}
 
-    <a href="{% url 'edit_student' student.school_id %}">
-        <button type="button" class="btn btn-primary">Edit</button>
-    </a>
-
-    <a href="{% url 'delete_student' student.school_id %}">
-        <button type="button" class="btn btn-danger">Delete</button>
-    </a>
+    </div>
 
 {% endblock %}
 

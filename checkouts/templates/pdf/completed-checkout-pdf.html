@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title></title>
+        <style type="text/css">
+
+            .title {
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+{#            {% load static %}#}
+{#            <img src="{% static 'img/SVA_primary_color.png' %}" alt="SVA NYC">#}
+{#            <img src="../../static/img/SVA_primary_color.png" alt="">#}
+
+            <h1 class="title">SVA NYC | School of Visual Arts</h1>
+            <br>
+
+            <div class="header">
+                <h2>BFA Visual & Critical Studies Department</h2>
+                <h2>133 West 21st Street, 4th Floor; New York, NY 10011</h2>
+            </div>
+
+            <hr>
+
+            <h2>{{ checkout_number }}</h2>
+
+            <div class="details">
+                <p>Name: {{ first_name }} {{ last_name }}</p>
+                <p>ID: {{ user_id }}</p>
+                <p>Date Issued: {{ date_issued }}</p>
+                <p>Due Date: {{ due_date }}</p>
+                <p>Staff: {{ staff_first }} {{ staff_last }}</p>
+                <p>Notes: {{ notes|linebreaks }}</p>
+            </div>
+
+            <br><br>
+            <hr>
+
+            <div class="equipment">
+                <h1>Equipment:</h1>
+                <ul>
+                    {% for eq in equipment %}
+                    <li>{{ eq.category|title }}: {{ eq }} ({{ eq.serial_num }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br><br>
+            <hr>
+
+            <div class="disclaimer">
+                <br>
+                <p>
+                    I acknowledge that I have received all of the equipment listed and that it is in good working condition.
+                    I understand that I am responsible for reimbursing the BFA Visual & Critical Studies Department for loss/damage to any/all equipment.
+                    Upon failure to return any/all equipment on time, the associated user will be subject to a fine up to the replacement cost of the associated equipment.
+                </p>
+                <p>
+                    Return Hours: Monday-Friday, 9am-5pm
+                </p>
+            </div>
+
+            <div class="signature">
+                <br>
+                <h2>Signature:</h2>
+                <hr>
+            </div>
+
+        </div>
+    </body>
+</html>

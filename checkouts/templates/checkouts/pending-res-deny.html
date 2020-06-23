@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+            <h2 class="h2">Are you sure you want to deny this reservation?</h2>
+        </div>
+
+        {% if denied_res %}
+
+        <div class="row mt-4">
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                    <h5 class="border-bottom p-md-3">{{ denied_res }}</h5>
+
+                    <div class="card-body">
+
+                        <h6>Requester:</h6>
+                        <p><a href="{% url 'student_detail' denied_res.requested_by.school_id %}">{{ denied_res.requested_by }}</a></p>
+
+                        <h6>Request Date:</h6>
+                        <p>{{ denied_res.request_date }}</p>
+
+                        <h6>Due Date:</h6>
+                        <p>{{ denied_res.due_date }}</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                     <h5 class="border-bottom p-md-3">Equipment Requested:</h5>
+
+                     <ul class="mt-3">
+                        {% for eq in denied_res.cameras.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in denied_res.lights.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in denied_res.computers.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in denied_res.projectors.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in denied_res.audio.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in denied_res.misc.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 pb-1">
+            <div class="col">
+                <h5 class="border-bottom">Notes From Requester:</h5>
+                {% if denied_res.notes %}
+                <p>{{ denied_res.notes|linebreaks }}</p>
+                {% else %}
+                    <p>No notes on this reservation.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class="row mt-4">
+            <div class="col">
+
+                <form class="return-checkout" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                                <label class="mr-4" style="width: auto;" for="{{ field.name }}">{{ field.label }}:</label>{{ field }}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-danger">Deny Reservation</button>
+                </form>
+
+            </div>
+        </div>
+
+
+{#        <div class="row pt-2 pb-3 border-top">#}
+{#            <div class="col">#}
+{#                <a href="{% url 'completed_reservation_pdf' denied_res.id %}">#}
+{#                    <button type="button" class="btn btn-info">Generate PDF</button>#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+
+        {% else %}
+            <p>Something went wrong, there's no reservation at the associated ID. Try looking for the reservation under
+                <a href="{% url 'pending_reservations' %}">pending reservations</a>.
+            </p>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

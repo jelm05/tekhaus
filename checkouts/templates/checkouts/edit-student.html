@@ -1,8 +1,10 @@
-{% extends 'checkouts/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-    <h1>Edit Student Details</h1>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+        <h2 class="h2">Edit User Details</h2>
+    </div>
 
     <form class="edit-equipment" method="post">
         {% csrf_token %}

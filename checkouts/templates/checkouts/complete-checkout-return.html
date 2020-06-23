@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if returned_checkout %}
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+            <h2 class="h2">Successfully Completed Return</h2>
+        </div>
+
+        <div class="row mt-4">
+
+            <div class="col-md-6 d-flex">
+
+                <div class="card flex-fill">
+
+                    <h5 class="border-bottom p-md-3">
+                        <a href="{% url 'checkout_detail' returned_checkout.id %}">{{ returned_checkout }}</a>
+                    </h5>
+
+                    <div class="card-body">
+
+                        <h6>User:</h6>
+                        <p class="card-text">
+                            <a href="{% url 'student_detail' returned_checkout.student.school_id %}">
+                                {{ returned_checkout.student }}
+                            </a>
+                        </p>
+
+                        <h6>Borrow Date:</h6>
+                        <p class="card-text">{{ returned_checkout.borrow_date }}</p>
+
+                        <h6>Due Date:</h6>
+                        <p class="card-text">{{ returned_checkout.due_date }}</p>
+
+                        <h6>Date Returned:</h6>
+                        {% if returned_checkout.return_date == returned_checkout.due_date %}
+                            <div class="alert alert-success">{{ returned_checkout.return_date }}</div>
+                        {% elif returned_checkout.return_date > returned_checkout.due_date %}
+                            <div class="alert alert-danger">{{ returned_checkout.return_date }}</div>
+                        {% elif returned_checkout.return_date < returned_checkout.due_date %}
+                            <div class="alert alert-success">{{ returned_checkout.return_date }}</div>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="row mt-4">
+            <div class="col">
+                <h5>Notes:</h5>
+                <p>{{ returned_checkout.notes|linebreaks }}</p>
+            </div>
+        </div>
+
+
+    {% else %}
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h2 class="h2">Something went wrong, there's no checkout with the associated ID.</h2>
+        </div>
+
+        <p>Try selecting a different checkout to return <a href="{% url 'return_list_checkouts' %}">here</a>.</p>
+
+    {% endif %}
+
+{% endblock %}
+
+
+
+
+

@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+handler404 = 'checkouts.views.error404'
+handler500 = 'checkouts.views.error500'
+
 urlpatterns = [
     path('', include('checkouts.urls')),
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
 ]

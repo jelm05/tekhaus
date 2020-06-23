@@ -1,16 +1,20 @@
-{% extends 'checkouts/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-    <h1>All Checkouts</h1>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+        <h2 class="h2">All Checkouts</h2>
+    </div>
 
-    <table class="table table-bordered">
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>Student</th>
+                <th>ID</th>
+                <th>User</th>
                 <th>Equipment</th>
                 <th>Borrow Date</th>
                 <th>Due Date</th>
+                <th>Staff</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -20,34 +24,79 @@
 
                     <tr>
                         <td>
+                            <a href="{% url 'checkout_detail' checkout.id %}">{{ checkout.id }}</a><br/>
+                        </td>
+                        <td>
                             <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a>
                         </td>
-                        {# This returns a query set: #}
                         <td>
-                            {% for equipment in checkout.student.current_equipment.all %}
-                                {{ equipment }}<br />
+
+                            {% for cameras in checkout.cameras.all %}
+                                <a href="{% url 'equipment_detail' cameras.id %}">
+                                    {{ cameras }}
+                                </a><br />
                             {% endfor %}
+
+                            {% for lights in checkout.lights.all %}
+                                <a href="{% url 'equipment_detail' lights.id %}">
+                                    {{ lights }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for computers in checkout.computers.all %}
+                                <a href="{% url 'equipment_detail' computers.id %}">
+                                    {{ computers }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for projectors in checkout.projectors.all %}
+                                <a href="{% url 'equipment_detail' projectors.id %}">
+                                    {{ projectors }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for audio in checkout.audio.all %}
+                                <a href="{% url 'equipment_detail' audio.id %}">
+                                    {{ audio }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for misc in checkout.misc.all %}
+                               <a href="{% url 'equipment_detail' misc.id %}">
+                                    {{ misc }}
+                                </a><br />
+                            {% endfor %}
+
                         </td>
                         <td>{{ checkout.borrow_date }}</td>
                         <td>{{ checkout.due_date }}</td>
+                        <td>
+                            {% if checkout.processed_by %}
+                                <a href="{% url 'admin_account_details' checkout.processed_by.id %}">
+                                    {{ checkout.processed_by.first_name }} {{ checkout.processed_by.last_name }}
+                                </a>
+                            {% else %}
+                                No staff attached
+                            {% endif %}
+                        </td>
 
                         {% load overdue_calculations %}
-                        <td>
-                        {% if checkout.due_date|overdue == True %}
-                            <div class="alert alert-danger" role="alert">OVERDUE {{ checkout.due_date|overdue_days}} DAYS</div>
-                        {% elif checkout.due_date|overdue == False %}
-                            <div class="alert alert-success" role="alert">All good, {{ checkout.due_date|overdue_days}} days left</div>
+{#                        {% if checkout.due_date|overdue == True %}#}
+                        {% if checkout.is_past_due %}
+                            <td class="table-danger">{{ checkout.due_date|overdue_days}} Days Overdue</td>
+                        {% elif checkout.is_past_due == False and checkout.due_date|overdue_days == 0 %}
+                            <td class="table-warning">Due Today</td>
+                        {% elif checkout.is_past_due == False %}
+                             <td class="table-success">{{ checkout.due_date|overdue_days}} Days Left</td>
                         {% endif %}
-                        </td>
 
                     </tr>
 
+
                 {% endfor %}
 
-
-
             {% else %}
-                <p>No checkouts available.</p>
+                <p class="alert alert-info">No current checkouts.</p>
             {% endif %}
         </tbody>
     </table>

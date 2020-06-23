@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if reservation %}
+
+        <div class="row mt-4">
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                    <h5 class="border-bottom p-md-3">{{ reservation }}</h5>
+
+                    <div class="card-body">
+                        <h6>User:</h6>
+                        <p><a href="{% url 'student_detail' reservation.requested_by.school_id %}">{{ reservation.requested_by }}</a></p>
+
+                        <h6>Requested:</h6>
+                        <p>{{ reservation.request_date }}</p>
+
+                        <h6>Due:</h6>
+                        <p>{{ reservation.due_date }}</p>
+
+                        <h6>Result:</h6>
+                        {% if reservation.accepted %}
+                            <div class="alert alert-success">Accepted</div>
+                        {% elif not reservation.accepted and not reservation.completed %}
+                            <div class="alert alert-info">Pending</div>
+                        {% elif not reservation.accepted and reservation.completed %}
+                            <div class="alert alert-danger">Denied</div>
+                        {% endif %}
+
+                        <h6>Status:</h6>
+                        {% if reservation.completed %}
+                            <div class="alert alert-success">Complete</div>
+                        {% else %}
+                            <div class="alert alert-danger">Incomplete</div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                     <h5 class="border-bottom p-md-3">Equipment Requested:</h5>
+
+                     <ul class="mt-3">
+                        {% for eq in reservation.cameras.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.lights.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.computers.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.projectors.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.audio.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.misc.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-2 pb-3">
+            <div class="col">
+
+                {% if not reservation.accepted and not reservation.completed %}
+                    <a href="{% url 'accept_pending_reservation' reservation.id %}">
+                        <button type="button" class="btn btn-primary">Accept Reservation</button>
+                    </a>
+
+                    <a href="{% url 'deny_pending_reservation' reservation.id %}">
+                        <button type="button" class="btn btn-danger">Deny Reservation</button>
+                    </a>
+
+                {% endif %}
+
+                <a href="{% url 'completed_reservation_pdf' reservation.id %}">
+                    <button type="button" class="btn btn-info">Generate PDF</button>
+                </a>
+
+                {% if not reservation.completed %}
+                    <a href="{% url 'mark_complete_reservation' reservation.id %}">
+                        <button type="button" class="btn btn-success">Mark Complete</button>
+                    </a>
+                {% endif %}
+
+            </div>
+        </div>
+
+        <div class="row mt-5 pb-1">
+            <div class="col">
+                <h5 class="border-bottom">Associated Notes:</h5>
+                {% if reservation.notes %}
+                <p>{{ reservation.notes|linebreaks }}</p>
+                {% else %}
+                    <p>No notes on this reservation request.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <br>
+
+    {% else %}
+        <p>There's no reservation associated with this ID.</p>
+    {% endif %}
+
+{% endblock %}
+
+
+

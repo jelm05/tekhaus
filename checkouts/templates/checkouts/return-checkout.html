@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if checkout_to_return %}
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+            <h2 class="h2">Process Return</h2>
+        </div>
+
+        <div class="row mt-4">
+
+            <div class="col-md-6 d-flex">
+
+                <div class="card flex-fill">
+
+                        <h5 class="border-bottom p-md-3">{{ checkout_to_return }}</h5>
+
+                         <div class="card-body">
+
+                        <h6>User:</h6>
+                        <p class="card-text">
+                            <a href="{% url 'student_detail' checkout_to_return.student.school_id %}">
+                                {{ checkout_to_return.student }}
+                            </a>
+                        </p>
+
+                        <h6>Borrow Date:</h6>
+                        <p class="card-text">{{ checkout_to_return.borrow_date }}</p>
+
+                        <h6>Due Date:</h6>
+                        <p class="card-text">{{ checkout_to_return.due_date }}</p>
+
+                        <h6>Checkout Notes:</h6>
+                        <p class="card-text">{{ checkout_to_return.notes }}</p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-6 d-flex">
+
+                <div class="card flex-fill">
+
+                    <h5 class="border-bottom p-md-3">Associated Equipment</h5>
+
+                     <div class="card-body">
+
+                         <ul class="list-group list-group-flush">
+
+                             {% if associated_equipment %}
+                                 {% for equipment in associated_equipment %}
+                                     <li class="list-group-item">
+                                         <a href="{% url 'equipment_detail' equipment.id %}">{{ equipment }}</a>
+                                     </li>
+                                 {% endfor %}
+                             {% else %}
+                                 <li class="list-group-item">No associated equipment.</li>
+                             {% endif %}
+                         </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="row mt-4">
+            <div class="col">
+
+                <form class="return-checkout" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                                <label for="{{ field.name }}">{{ field.label }}:</label>
+                                {{ field }}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Return Checkout</button>
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+    {% else %}
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h2 class="h2">Something went wrong, there's no checkout with the associated ID.</h2>
+        </div>
+
+        <p>Try selecting a different checkout to return <a href="{% url 'return_list_checkouts' %}">here</a>.</p>
+
+    {% endif %}
+
+
+{% endblock %}
+
+
+
+
+

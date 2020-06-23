@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if checkout %}
+
+        <div class="row mt-4">
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                    <h5 class="border-bottom p-md-3">{{ checkout }}</h5>
+
+                    <div class="card-body">
+                        <h6>User:</h6>
+                        <p><a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a></p>
+
+                        <h6>Processed by:</h6>
+                        {% if checkout.processed_by %}
+                        <p><a href="{% url 'admin_account_details' checkout.processed_by.id %}">{{ checkout.processed_by.first_name }} {{ checkout.processed_by.last_name }}</a></p>
+                        {% else %}
+                        <p>No staff attached.</p>
+                        {% endif %}
+
+                        <h6>Borrowed:</h6>
+                        <p>{{ checkout.borrow_date }}</p>
+
+                        <h6>Due:</h6>
+                        <p>{{ checkout.due_date }}</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                     <h5 class="border-bottom p-md-3">Equipment Borrowed:</h5>
+
+                     <ul class="mt-3">
+                        {% for eq in checkout.cameras.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in checkout.lights.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in checkout.computers.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in checkout.projectors.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in checkout.audio.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in checkout.misc.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 pb-1">
+            <div class="col">
+                <h5 class="border-bottom">Associated Notes:</h5>
+                {% if checkout.notes %}
+                <p>{{ checkout.notes|linebreaks }}</p>
+                {% else %}
+                    <p>No notes on this checkout.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row pt-2 pb-3 border-top">
+            <div class="col">
+                <a href="{% url 'completed_checkout_pdf' checkout.id %}">
+                    <button type="button" class="btn btn-info">Generate PDF</button>
+                </a>
+            </div>
+        </div>
+
+    {% else %}
+        <p>This checkout doesn't exist.</p>
+    {% endif %}
+
+{% endblock %}
+
+
+

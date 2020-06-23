@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6 d-flex">
+
+                    <div class="card flex-fill">
+                        <div class="card-body">
+
+                            {% if admin_account %}
+                                <h5 class="card-title">{{ admin_account.first_name }} {{ admin_account.last_name }}</h5>
+                                <p class="card-text">Username: {{ admin_account }}</p>
+                                <p class="card-text">Date Joined: {{ admin_account.date_joined }}</p>
+                                <p class="card-text">Email: {{ admin_account.email }}</p>
+                            {% else %}
+                                <p class="card-text">This account doesn't exist.</p>
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+{% endblock %}
+

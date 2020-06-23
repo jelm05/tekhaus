@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+
+        {% if user.is_authenticated %}
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+
+                    <div class="card flex-fill">
+
+                        <h5 class="border-bottom p-md-3">{{ user.first_name|title }} {{ user.last_name|title }}</h5>
+
+                        <div class="card-body">
+
+                            <h6>Username:</h6>
+                            <p class="card-text">{{ user.username }}</p>
+
+                            <h6>Name:</h6>
+                            <p class="card-text">{{ user.first_name|title }} {{ user.last_name|title }}</p>
+
+                            <h6>Email:</h6>
+                            <p class="card-text">Email: {{ user.email }}</p>
+
+                            <h6>Date joined:</h6>
+                            <p class="card-text">{{ user.date_joined }}</p>
+
+                            <h6>Last login:</h6>
+                            <p class="card-text">{{ user.last_login }}</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="row pt-2 pb-3">
+                <div class="col">
+
+                    <a href="{% url 'edit_admin_account' user.id %}">
+                        <button type="button" class="btn btn-primary">Edit User Details</button>
+                    </a>
+
+                    <a href="{% url 'password_change' %}">
+                        <button class="btn btn-warning">Change Password</button>
+                    </a>
+                </div>
+            </div>
+
+        {% else %}
+
+            <div class="row pt-2 pb-3">
+                <div class="col">
+                    <p>You are not logged in.</p>
+                    <p>
+                        <a href="{% url 'login' %}">login</a>
+                    </p>
+                </div>
+            </div>
+
+        {% endif %}
+
+
+    <div class="row mt-5 pb-1">
+        <div class="col">
+            <h5>Processed Checkouts</h5>
+        </div>
+    </div>
+
+    {% if checkouts_processed %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Equipment</th>
+                <th>Borrow Date</th>
+                <th>Due Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                {% for checkout in checkouts_processed %}
+
+                    <tr>
+                    <td>
+                        <a href="{% url 'checkout_detail' checkout.id %}">{{ checkout.id }}</a><br/>
+                    </td>
+                    <td>
+                        <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a>
+                    </td>
+                        <td>
+                        {% for cameras in checkout.cameras.all %}
+                            {{ cameras }}<br />
+                        {% endfor %}
+
+                        {% for lights in checkout.lights.all %}
+                            {{ lights }}<br />
+                        {% endfor %}
+
+                        {% for computers in checkout.computers.all %}
+                            {{ computers }}<br />
+                        {% endfor %}
+
+                        {% for projectors in checkout.projectors.all %}
+                            {{ projectors }}<br />
+                        {% endfor %}
+
+                        {% for audio in checkout.audio.all %}
+                            {{ audio }}<br />
+                        {% endfor %}
+
+                        {% for misc in checkout.misc.all %}
+                            {{ misc }}<br />
+                        {% endfor %}
+                    </td>
+                        <td>{{ checkout.borrow_date }}</td>
+                        <td>{{ checkout.due_date }}</td>
+
+                        {% load overdue_calculations %}
+                        {% if checkout.due_date|overdue == True and checkout.completed == False %}
+                            <td class="table-danger">Overdue {{ checkout.due_date|overdue_days}} Days</td>
+                        {% elif checkout.due_date|overdue == False and checkout.completed == False %}
+                            <td class="table-success">{{ checkout.due_date|overdue_days}} Days Left</td>
+                        {% elif checkout.completed == True %}
+                            <td class="table-success">Returned {{ checkout.return_date }}</td>
+                        {% endif %}
+
+                    </tr>
+
+                {% endfor %}
+
+        </tbody>
+    </table>
+
+    {% else %}
+        <p>This user has not checked anything out.</p>
+    {% endif %}
+
+    </div>
+
+{% endblock %}
+

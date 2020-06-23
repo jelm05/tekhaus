@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if reservation %}
+
+        <div class="row mt-4">
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                    <h5 class="border-bottom p-md-3">{{ reservation }}</h5>
+
+                    <div class="card-body">
+                        <h6>User:</h6>
+                        <p><a href="{% url 'student_detail' reservation.requested_by.school_id %}">{{ reservation.requested_by }}</a></p>
+
+                        <h6>Requested:</h6>
+                        <p>{{ reservation.request_date }}</p>
+
+                        <h6>Due:</h6>
+                        <p>{{ reservation.due_date }}</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                     <h5 class="border-bottom p-md-3">Equipment Requested:</h5>
+
+                     <ul class="mt-3">
+                        {% for eq in reservation.cameras.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.lights.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.computers.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.projectors.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.audio.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in reservation.misc.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 pb-1">
+            <div class="col">
+                <h5 class="border-bottom">Associated Notes:</h5>
+                {% if reservation.notes %}
+                <p>{{ reservation.notes|linebreaks }}</p>
+                {% else %}
+                    <p>No notes on this reservation request.</p>
+                {% endif %}
+            </div>
+        </div>
+
+         <div class="row pt-2 pb-3 border-top">
+            <div class="col">
+                <a href="{% url 'completed_reservation_pdf' reservation.id %}">
+                    <button type="button" class="btn btn-info">Generate Confirmation</button>
+                </a>
+            </div>
+        </div>
+
+    {% else %}
+        <p>There's no reservation associated with this ID.</p>
+    {% endif %}
+
+{% endblock %}
+
+
+

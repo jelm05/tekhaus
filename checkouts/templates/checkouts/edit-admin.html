@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        {% if admin_account %}
+
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+                <h2 class="h2">Edit Account Details</h2>
+            </div>
+
+            {% if admin_account.id == user.id %}
+
+                <form class="edit-admin-account" method="post">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <div class="helptext alert alert-info">Username must be 150 characters or fewer. Letters, digits and @/./+/-/_ only.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_username">Username:</label>
+                        <input type="text" name="username" value="{{ admin_account.username }}" maxlength="150" class="form-control" required="" id="id_username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_first_name">First name:</label>
+                        <input type="text" name="first_name" value="{{ admin_account.first_name }}" maxlength="30" class="form-control" id="id_first_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_last_name">Last name:</label>
+                        <input type="text" name="last_name" value="{{ admin_account.last_name }}" maxlength="150" class="form-control" id="id_last_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_email">Email address:</label>
+                        <input type="email" name="email" value="{{ admin_account.email }}" maxlength="254" class="form-control" id="id_email">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+
+            {% else %}
+                <p>You cannot edit the account details of another admin account.</p>
+
+                <a href="{% url 'edit_admin_account' user.id %}">
+                    <button class="btn btn-primary">Edit Your Account</button>
+                </a>
+
+            {% endif %}
+
+        {% endif %}
+    {% endif %}
+
+{% endblock %}
+
+
+

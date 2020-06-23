@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title></title>
+        <style type="text/css">
+
+            .title {
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <h1 class="title">SVA NYC | School of Visual Arts</h1>
+            <br>
+
+            <div class="header">
+                <h2>BFA Visual & Critical Studies Department</h2>
+                <h2>133 West 21st Street, 4th Floor; New York, NY 10011</h2>
+            </div>
+
+            <hr>
+
+            <div class="confirmation">
+                <br>
+                <p>
+                    This confirms <strong>{{ first_name }} {{ last_name }} ({{ user_id }})</strong> successfully requested the above equipment.
+                    Please bring this confirmation when picking up the equipment.
+                </p>
+                <p>
+                    Checkout Hours: Monday-Friday, 9am-5pm
+                </p>
+                <br>
+            </div>
+
+            <hr>
+
+            <h2>{{ reservation_number }}</h2>
+
+            <div class="details">
+                <p>Name: {{ first_name }} {{ last_name }}</p>
+                <p>ID: {{ user_id }}</p>
+                <p>Request Date: {{ date_issued }}</p>
+                <p>Due Date: {{ due_date }}</p>
+                <p>Notes: {{ notes|linebreaks }}</p>
+            </div>
+
+            <br><br>
+            <hr>
+
+            <div class="equipment">
+                <h1>Equipment:</h1>
+                <ul>
+                    {% for eq in equipment %}
+                    <li>{{ eq.category|title }}: {{ eq }} ({{ eq.serial_num }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br><br>
+            <hr>
+
+        </div>
+    </body>
+</html>

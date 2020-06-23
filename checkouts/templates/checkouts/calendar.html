@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container mt-4">
+        <div id="calendar"></div>
+    </div>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lib/css/calendar/fullCalendar-main.min.css'%}">
+    <link rel="stylesheet" href="{% static 'lib/css/calendar/dayGrid-main.min.css'%}">
+    <link rel="stylesheet" href="{% static 'lib/css/calendar/list-main.min.css'%}">
+    <script type="text/javascript" src="{% static 'lib/js/calendar/fullCalendar-main.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'lib/js/calendar/dayGrid-main.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'lib/js/calendar/list-main.min.js'%}"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            let calElement = document.getElementById('calendar')
+            let cal = new FullCalendar.Calendar(calElement, {
+                plugins: ['dayGrid', 'list'],
+                header: {
+                    left: 'today prev,next',
+                    center: 'title',
+                    right: 'dayGridMonth list',
+                },
+                events: [
+                    {% if active_checkouts %}
+                        {% for checkout in active_checkouts %}
+
+                            {
+                                title: '{{ checkout }}: {{ checkout.student.first_name }} {{ checkout.student.last_name }}',
+                                start: '{{ checkout.borrow_date|date:"Y-m-d" }}',
+                                end: '{{ checkout.due_date|date:"Y-m-d" }}',
+                                url: '{% url "checkout_detail" checkout.id %}',
+                                {% if checkout.is_past_due %}
+                                borderColor: '#e04646',
+                                backgroundColor: '#e04646'
+                                {% else %}
+                                backgroundColor: '#3788d8'
+                                {% endif %}
+                            },
+
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if accepted_reservations %}
+                        {% for reservation in accepted_reservations %}
+
+                            {
+                                title: 'Accepted Res {{ reservation.id }}: {{ reservation.requested_by }}',
+                                start: '{{ reservation.request_date|date:"Y-m-d" }}',
+                                end: '{{ reservation.due_date|date:"Y-m-d" }}',
+                                url: '{% url "reservation_detail" reservation.id %}',
+                                borderColor: '#26a347',
+                                backgroundColor: '#26a347'
+                            },
+
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if pending_reservations %}
+                        {% for reservation in pending_reservations %}
+
+                            {
+                                title: 'Pending Res {{ reservation.id }}: {{ reservation.requested_by }}',
+                                start: '{{ reservation.request_date|date:"Y-m-d" }}',
+                                end: '{{ reservation.due_date|date:"Y-m-d" }}',
+                                url: '{% url "reservation_detail" reservation.id %}',
+                                borderColor: '#a400bd',
+                                backgroundColor: '#a400bd'
+                            },
+
+                        {% endfor %}
+                    {% endif %}
+
+                ]
+            });
+
+            cal.render();
+        });
+
+    </script>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+            <h2 class="h2">Manually Mark Reservation Complete</h2>
+        </div>
+
+        {% if res_to_complete %}
+
+        <div class="row mt-4">
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                    <h5 class="border-bottom p-md-3">{{ res_to_complete }}</h5>
+
+                    <div class="card-body">
+
+                        <h6>Requester:</h6>
+                        <p><a href="{% url 'student_detail' res_to_complete.requested_by.school_id %}">{{ res_to_complete.requested_by }}</a></p>
+
+                        <h6>Request Date:</h6>
+                        <p>{{ res_to_complete.request_date }}</p>
+
+                        <h6>Due Date:</h6>
+                        <p>{{ res_to_complete.due_date }}</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 d-flex">
+                <div class="card flex-fill">
+                     <h5 class="border-bottom p-md-3">Equipment Requested:</h5>
+
+                     <ul class="mt-3">
+                        {% for eq in res_to_complete.cameras.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in res_to_complete.lights.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in res_to_complete.computers.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in res_to_complete.projectors.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in res_to_complete.audio.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+
+                        {% for eq in res_to_complete.misc.all %}
+                            <li><a href="{% url 'equipment_detail' eq.pk %}">{{ eq }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 pb-1">
+            <div class="col">
+                <h5 class="border-bottom">Notes From Requester:</h5>
+                {% if res_to_complete.notes %}
+                <p>{{ res_to_complete.notes|linebreaks }}</p>
+                {% else %}
+                    <p>No notes on this reservation.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row mt-4">
+            <div class="col">
+
+                <form class="return-checkout" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                                <label class="mr-4" style="width: auto;" for="{{ field.name }}">{{ field.label }}:</label>{{ field }}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Mark Reservation Complete</button>
+                </form>
+
+            </div>
+        </div>
+
+        {% else %}
+            <p>Something went wrong, there's no reservation at the associated ID. Try looking for the reservation under
+                <a href="{% url 'pending_reservations' %}">pending reservations</a>.
+            </p>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

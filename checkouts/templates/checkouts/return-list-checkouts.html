@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-3 border-bottom">
+        <h2 class="h2">Select a Checkout to Return</h2>
+    </div>
+
+    {% if form.errors %}
+        <ol>
+        {% for error in form.errors %}
+            <li><strong>{{ error|escape }}</strong></li>
+        {% endfor %}
+        </ol>
+    {% endif %}
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student</th>
+                <th>Equipment</th>
+                <th>Borrow Date</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Process</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if return_list_checkouts %}
+                {% for checkout in return_list_checkouts %}
+
+                    <tr>
+                        <td>
+                            <a href="{% url 'checkout_detail' checkout.id %}">{{ checkout.id }}</a><br/>
+                        </td>
+                        <td>
+                            <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a>
+                        </td>
+                        <td>
+                            {% for equipment in checkout.student.current_equipment.all %}
+                                {{ equipment }}<br />
+                            {% endfor %}
+                        </td>
+
+                        <td>{{ checkout.borrow_date }}</td>
+                        <td>{{ checkout.due_date }}</td>
+
+                        {% load overdue_calculations %}
+                        {% if checkout.is_past_due %}
+                            <td class="table-danger">{{ checkout.due_date|overdue_days}} Days Overdue</td>
+                        {% elif checkout.is_past_due == False and checkout.due_date|overdue_days == 0 %}
+                            <td class="table-warning">Due Today</td>
+                        {% elif checkout.is_past_due == False %}
+                             <td class="table-success">{{ checkout.due_date|overdue_days}} Days Left</td>
+                        {% endif %}
+                        </td>
+
+                        <td>
+                            <a href="{% url 'return_checkout' checkout.id %}">
+                                <button class="btn btn-primary">Return</button>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+            {% else %}
+                <p class="alert alert-info">No current checkouts to return.</p>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+

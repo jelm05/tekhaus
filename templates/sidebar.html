@@ -1,0 +1,121 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+
+    <ul class="nav flex-column">
+
+        <br>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'all_equipment' %}">
+          Equipment List
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'start_reservation' %}">
+            Reservation Request
+        </a>
+      </li>
+
+    </ul>
+
+    {% if user.is_authenticated %}
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">Staff</h6>
+
+    <ul class="nav flex-column mb-2">
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'dashboard' %}">
+          Dashboard
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'all_checkouts' %}">
+          Checkouts
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'all_students' %}">
+          Users
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'calendar' %}">
+          Calendar
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'past_checkouts' %}">
+          Past Checkouts
+        </a>
+      </li>
+
+    </ul>
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">Actions</h6>
+
+    <ul class="nav flex-column mb-2">
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'new_checkout' %}">
+          New Checkout
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'return_list_checkouts' %}">
+          Return Checkout
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'pending_reservations' %}">
+          Pending Reservations
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'accepted_reservations' %}">
+          Accepted Reservations
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_new_equipment' %}">
+          Add Equipment
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_new_student' %}">
+          Add User
+        </a>
+      </li>
+
+    </ul>
+
+    {% endif %}
+
+    {% if user.is_staff %}
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">Admin</h6>
+
+      <ul class="nav flex-column mb-2">
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add_new_admin' %}">
+              Add Admin
+            </a>
+          </li>
+
+      </ul>
+
+    {% endif %}
+
+  </div>
+</nav>

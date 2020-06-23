@@ -1,41 +1,251 @@
-{% extends 'checkouts/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-    {% if equipment %}
-        <h1>{{ equipment.name }}</h1>
+    <div class="container">
 
-        {% if not equipment.current_user  %}
-            <h2>Available: {{ equipment.availability }}</h2>
-        {% else %}
-            <h2>Current User:
-                <a href="{% url 'student_detail' equipment.current_user.school_id %}">{{ equipment.current_user }}</a>
-            </h2>
+        <div class="row mt-4">
+
+            <div class="col-md-5 d-flex">
+                <div class="card flex-fill">
+
+                    {% if equipment %}
+                        <h5 class="border-bottom p-md-3">{{ equipment.name }}</h5>
+
+                        <div class="card-body">
+                            {% if not equipment.current_user  %}
+                                {% if equipment.availability == True %}
+                                    <h5 class="alert alert-success">Available</h5>
+                                {% endif %}
+                            {% else %}
+                                <h5 class="alert alert-danger">Unavailable</h5>
+                                <h6>Current User:</h6>
+                                <p>
+                                    <a href="{% url 'student_detail' equipment.current_user.school_id %}">{{ equipment.current_user }}</a>
+                                </p>
+                            {% endif %}
+
+{#                            {% if equipment.reservation_request %}#}
+{#                                <br>#}
+{#                                <h6>Reservation Request:</h6>#}
+{#                                <p>{{ equipment.reservation_request }}</p>#}
+{#                            {% endif %}#}
+
+                        </div>
+
+                    {% else %}
+                        <h5 class="border-bottom p-md-3">There's no equipment associated with this ID.</h5>
+                    {% endif %}
+
+                    </div>
+
+                </div>
+
+            <div class="col-md-7 d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-body">
+
+                            {% if equipment %}
+
+                                <h6>Equipment Type: </h6>
+                                <p class="card-text">{{ equipment.category|title }}</p>
+
+                                <h6>Serial Number: </h6>
+                                <p class="card-text">{{ equipment.serial_num }}</p>
+
+                                <h6>Description: </h6>
+                                <p class="card-text">{{ equipment.desc }}</p>
+
+                                <h6>Details: </h6>
+                                <p class="card-text">{{ equipment.details }}</p>
+
+                            {% else %}
+                                <p>Something went wrong. This piece of equipment doesn't exist.</p>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+        </div>
+
+        <div class="row pt-2 pb-3">
+            <div class="col">
+                <a href="{% url 'edit_equipment' equipment.pk %}">
+                    <button type="button" class="btn btn-primary">Edit Equipment Details</button>
+                </a>
+
+                <a href="{% url 'delete_equipment' equipment.pk %}">
+                    <button type="button" class="btn btn-danger">Delete Equipment</button>
+                </a>
+            </div>
+
+        </div>
+
+
+        {% if equipment.reservation_request %}
+        <div class="row mt-5 pb-1">
+            <div class="col">
+
+                <div class="alert alert-info">
+                    {% if equipment.reservation_request.accepted == True %}
+                        This piece of equipment has an accepted reservation request, {{ equipment.reservation_request }} by
+                        <a href="{% url 'student_detail' equipment.reservation_request.requested_by.school_id %}">
+                        {{ equipment.reservation_request.requested_by }}
+                        </a>
+                    {% else  %}
+                        This piece of equipment has a pending reservation request, {{ equipment.reservation_request }}
+                        for {{ equipment.reservation_request.request_date }} by
+                        <a href="{% url 'student_detail' equipment.reservation_request.requested_by.school_id %}">
+                        {{ equipment.reservation_request.requested_by }}.
+                        </a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
         {% endif %}
 
-        <p>{{ equipment.category|title }}</p>
-        <p>Serial Number: {{ equipment.serial_num }}</p>
-        <p>Description: {{ equipment.desc }}</p>
-        <p>Details: {{ equipment.details }}</p>
 
-        {# Without .all at the end, it will always return true because the field exists #}
-        {% if not equipment.past_checkouts.all  %}
-            <p>This piece of equipment has not been checked out yet.</p>
-        {% else %}
-            <p>{{ equipment.past_checkouts }}</p>
-        {% endif %}
+{#    {% if equipment.reservation_request %}#}
+{#        <div class="row mt-5 pb-1">#}
+{#            <div class="col">#}
+{#                <h5 class="border-bottom">Reservation Requests</h5>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <table class="table table-bordered">#}
+{#            <thead>#}
+{#                <tr>#}
+{#                    <th>ID</th>#}
+{#                    <th>Requestor</th>#}
+{#                    <th>Request Date</th>#}
+{#                    <th>Due Date</th>#}
+{#                    <th>Status</th>#}
+{#                </tr>#}
+{#            </thead>#}
+{#            <tbody>#}
+{##}
+{#                <tr>#}
+{#                    <td>{{ equipment.reservation_request.id }}</td>#}
+{#                    <td>{{ equipment.reservation_request.requested_by }}</td>#}
+{#                    <td>{{ equipment.reservation_request.request_date }}</td>#}
+{#                    <td>{{ equipment.reservation_request.due_date }}</td>#}
+{#                    <td>{{ equipment.reservation_request.accepted }}</td>#}
+{#                </tr>#}
+{##}
+{#            </tbody>#}
+{#        </table>#}
+{##}
+{#    {% endif %}#}
 
+
+
+
+
+{#    {% if is_requested %}#}
+{##}
+{##}
+{#        <table class="table table-bordered">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>ID</th>#}
+{#                <th>Requestor</th>#}
+{#                <th>Request Date</th>#}
+{#                <th>Due Date</th>#}
+{#                <th>Status</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{##}
+{#        {% for reservation in is_requested %}#}
+{##}
+{#            <tr>#}
+{#                <td>{{ reservation.id }}</td>#}
+{#                <td>{{ reservation.requested_by }}</td>#}
+{#                <td>{{ reservation.request_date }}</td>#}
+{#                <td>{{ reservation.due_date }}</td>#}
+{#                <td>{{ reservation.accepted }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{##}
+{#            </tbody>#}
+{#        </table>#}
+{#    {% else %}#}
+{#    <div class="row">#}
+{#        <div class="col">#}
+{#            <p>This piece of equipment hasn't been checked out yet.</p>#}
+{#        </div>#}
+{#    </div>#}
+{#    {% endif %}#}
+
+
+
+
+
+
+    <div class="row mt-5 pb-1">
+        <div class="col">
+            <h5 class="border-bottom">Past Checkouts</h5>
+        </div>
+    </div>
+
+    {% if equipment_past_checkouts %}
+
+
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Borrow Date</th>
+                <th>Due Date</th>
+                <th>Return Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for checkout in equipment_past_checkouts %}
+
+            <tr>
+                <td>
+                    <a href="{% url 'checkout_detail' checkout.id %}">{{ checkout.id }}</a>
+                </td>
+                <td>
+                    <a href="{% url 'student_detail' checkout.student.school_id %}">
+                        {{ checkout.student }}
+                    </a>
+                </td>
+                <td>{{ checkout.borrow_date }}</td>
+                <td>{{ checkout.due_date }}</td>
+                <td>{{ checkout.return_date }}</td>
+                {% load return_date_calculator %}
+                {% if checkout.return_date == checkout.due_date %}
+                    <td class="table-success">Returned On Due Date</td>
+                {% elif checkout.return_date > checkout.due_date %}
+                    <td class="table-danger">Returned {% return_date_calc checkout.return_date checkout.due_date %} Day(s) Late</td>
+                {% elif checkout.return_date < checkout.due_date %}
+                    <td class="table-success">Returned {% return_date_calc checkout.return_date checkout.due_date %} Day(s) Early</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+
+            </tbody>
+        </table>
     {% else %}
-        <p>This piece of equipment doesn't exist.</p>
+    <div class="row">
+        <div class="col">
+            <p>This piece of equipment hasn't been checked out yet.</p>
+        </div>
+    </div>
     {% endif %}
 
-    <a href="{% url 'edit_equipment' equipment.pk %}">
-        <button type="button" class="btn btn-primary">Edit</button>
-    </a>
+    </div>
 
-    <a href="{% url 'delete_equipment' equipment.pk %}">
-        <button type="button" class="btn btn-danger">Delete</button>
-    </a>
+
 
 {% endblock %}
 
