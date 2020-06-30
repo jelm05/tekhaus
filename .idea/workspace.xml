@@ -2,88 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/css/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/lib/css/dataTables-1.10.20.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/lib/css/font-awesome-4.1.0.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/lib/js/bootstrap-4.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/lib/js/datatables-1.10.20.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/lib/js/datatables-bootstrap-1.10.20.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/lib/js/jquery-ui-1.12.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/static/lib/js/popper-1.14.7.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/accepted-reservations.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/admin-account-detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/admin-account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/calendar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/complete-checkout-return.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/complete-reservation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-reservation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/mark-complete-reservation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout-from-reservation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-reservation-form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-reservation-start.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-accept.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-deny.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-reservations.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/return-checkout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/search-users.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/pdf/completed-checkout-pdf.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/pdf/completed-reservation-pdf.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-change-done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-change.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-complete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-reset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templatetags/return_date_calculator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tekhaus/celery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/tekhaus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tekhaus.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/css/bootstrap-4.3.1.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/static/lib/css/bootstrap-4.3.1.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/dataTables.bootstrap4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/jquery.dataTables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-equipment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/add-new-student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-checkouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-checkouts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-equipment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-students.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-students.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/complete-checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/delete-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/delete-equipment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/delete-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/delete-student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-equipment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-equipment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-student.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/edit-student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/equipment-return.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/return-list-checkouts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/past-checkouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/past-checkouts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templatetags/overdue_calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templatetags/overdue_calculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tekhaus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tekhaus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tekhaus/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +41,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -223,6 +152,9 @@
       <workItem from="1591734028236" duration="5087000" />
       <workItem from="1591984786341" duration="491000" />
       <workItem from="1592510059985" duration="3843000" />
+      <workItem from="1592921004653" duration="5417000" />
+      <workItem from="1593101377914" duration="172000" />
+      <workItem from="1593450836165" duration="9432000" />
     </task>
     <servers />
   </component>
@@ -245,6 +177,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="914" y="417" key="#Inspections" timestamp="1593453186873">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="914" y="417" key="#Inspections/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593453186873" />
     <state x="811" y="530" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590080549096">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
@@ -253,33 +189,37 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="858" y="431" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1586894527793" />
-    <state x="1061" y="442" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587601195967">
+    <state x="1061" y="442" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593456164467">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1061" y="442" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1587601195967" />
-    <state width="2135" height="218" key="GridCell.Tab.0.bottom" timestamp="1591896410124">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="1061" y="442" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593456164467" />
+    <state width="2518" height="234" key="GridCell.Tab.0.bottom" timestamp="1593450970430">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2135" height="218" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1591896410124" />
-    <state width="2135" height="350" key="GridCell.Tab.0.bottom/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1591390849433" />
+    <state width="1638" height="157" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1592936622976" />
+    <state width="2518" height="234" key="GridCell.Tab.0.bottom/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593450970430" />
+    <state width="1638" height="157" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073642" />
     <state width="2135" height="218" key="GridCell.Tab.0.bottom/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744704" />
-    <state width="2135" height="218" key="GridCell.Tab.0.center" timestamp="1591896410123">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="2518" height="234" key="GridCell.Tab.0.center" timestamp="1593450970428">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2135" height="218" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1591896410123" />
-    <state width="2135" height="350" key="GridCell.Tab.0.center/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1591390849432" />
+    <state width="1638" height="157" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1592936622975" />
+    <state width="2518" height="234" key="GridCell.Tab.0.center/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593450970428" />
+    <state width="1638" height="157" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073641" />
     <state width="2135" height="218" key="GridCell.Tab.0.center/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744703" />
-    <state width="2135" height="218" key="GridCell.Tab.0.left" timestamp="1591896410122">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="2518" height="234" key="GridCell.Tab.0.left" timestamp="1593450970427">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2135" height="218" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1591896410122" />
-    <state width="2135" height="350" key="GridCell.Tab.0.left/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1591390849432" />
+    <state width="1638" height="157" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1592936622975" />
+    <state width="2518" height="234" key="GridCell.Tab.0.left/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593450970427" />
+    <state width="1638" height="157" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073641" />
     <state width="2135" height="218" key="GridCell.Tab.0.left/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744702" />
-    <state width="2135" height="218" key="GridCell.Tab.0.right" timestamp="1591896410124">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="2518" height="234" key="GridCell.Tab.0.right" timestamp="1593450970429">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2135" height="218" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1591896410124" />
-    <state width="2135" height="350" key="GridCell.Tab.0.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1591390849433" />
+    <state width="1638" height="157" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1592936622976" />
+    <state width="2518" height="234" key="GridCell.Tab.0.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593450970429" />
+    <state width="1638" height="157" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073642" />
     <state width="2135" height="218" key="GridCell.Tab.0.right/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744703" />
     <state width="2229" height="161" key="GridCell.Tab.1.bottom" timestamp="1590334013063">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -301,6 +241,14 @@
     </state>
     <state width="2229" height="161" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590334013063" />
     <state width="2229" height="161" key="GridCell.Tab.1.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1590081371247" />
+    <state x="280" y="254" key="SettingsEditor" timestamp="1592928859174">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="280" y="254" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1592928859174" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1593455468085">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593455468085" />
     <state x="737" y="305" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591644304914">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
