@@ -18,6 +18,8 @@ from checkouts.utils import render_to_pdf
 
 from django.db.models import Q, ProtectedError
 
+from .tasks import post_checkout_confirmation_email
+
 
 def error404(request, exception):
     data = {}
@@ -188,6 +190,10 @@ def new_checkout(request):
                 equipment.save()
 
             new_checkout.save()
+
+            # CELERY TASK
+            post_checkout_confirmation_email.delay(checkout_student.pk, new_checkout.pk)
+
             return redirect('complete_checkout', pk=new_checkout.pk)
     else:
         form = NewCheckoutForm()

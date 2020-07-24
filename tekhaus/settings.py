@@ -30,9 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
+    '0.0.0.0',
     'localhost'
 ]
-
 
 # ONLY FOR DEVELOPMENT
 if DEBUG:
@@ -45,20 +45,19 @@ else:
     EMAIL_USE_TLS = True
     DEFAULT_FROM_EMAIL = 'Tekhaus Team <admin@tekhaus.tech>'
 
+
 # Application definition
 INSTALLED_APPS = [
-    'checkouts.apps.CheckoutsConfig',
-    'django_select2',
-    # 'jquery',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'checkouts.apps.CheckoutsConfig',
+    'django_select2',
+    'django_celery_results',
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,9 +124,16 @@ DATABASES = {
 }
 
 
+# CELERY SERVICE RABBITMQ BROKER
+CELERY_BROKER_URL = "amqp://tekhaus:checkoutTekhaus1!@localhost/tekeq"
+CELERY_TASK_SERIALIZER = 'json'
+# WORKING WITH DJANGO_CELERY_RESULTS
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -143,10 +149,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'America/New_York'
@@ -157,14 +159,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-STATIC_ROOT = ''
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = (os.path.join('static'),)
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 LOGIN_REDIRECT_URL = 'dashboard'
 

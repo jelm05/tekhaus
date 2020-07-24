@@ -2,7 +2,28 @@ version: '3'
 
 services:
   web:
-    build: ./tekhaus
-    command: python3 manage.py runserver 0.0.0.0:8000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - static_files:/static_files/
     ports:
       - "8000:8000"
+    entrypoint:
+      - /tekhaus/start.sh
+      - init
+  nginx:
+    build:
+      context: .
+#      dockerfile: docker/prod/nginx/Dockerfile
+    volumes:
+      - static_files:/static_files
+    ports:
+      - "8080:80"
+    depends_on:
+      - web
+#  rabbitmq:
+#    image: library/rabbitmq:3.8.5-alpine
+
+volumes:
+  static_files:
