@@ -31,10 +31,13 @@ urlpatterns = [
     ),
 
     path('password/reset/', auth_views.PasswordResetView.as_view(
-        template_name='registration/password-reset.html'), name='password_reset'),
+        template_name='registration/password-reset.html',
+        html_email_template_name='registration/password_reset_html_email.html',
+        email_template_name='registration/password_reset_email.txt',
+        subject_template_name='registration/password_reset_subject.txt',), name='password_reset'),
     path('password/reset/done/', auth_views.PasswordResetDoneView.as_view(
         template_name='registration/password-reset-done.html'), name='password_reset_done'),
-    path('password/reset/confirm/', auth_views.PasswordResetConfirmView.as_view(
+    path('password/reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(
         template_name='registration/password-reset-confirm.html'), name='password_reset_confirm'),
     path('password/reset/complete/', auth_views.PasswordResetCompleteView.as_view(
         template_name='registration/password-reset-complete.html'), name='password_reset_complete'),
@@ -81,6 +84,7 @@ urlpatterns = [
     path('reservations/<int:pk>/accept/', views.accept_pending_reservation, name='accept_pending_reservation'),
     path('reservations/<int:pk>/deny/', views.deny_pending_reservation, name='deny_pending_reservation'),
     path('reservations/<int:pk>/mark/complete/', views.mark_complete_reservation, name='mark_complete_reservation'),
+    path('reservations/past/', views.past_reservations, name='past_reservations'),
 
     # path('search/', views.search, name='search'),
     # url(r'^search_users/$', views.search_users, name='search_users'),

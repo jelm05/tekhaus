@@ -1,5 +1,4 @@
 import json
-# from django.core.serializers import json
 
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404, loader
@@ -14,9 +13,9 @@ from datetime import datetime, date
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from checkouts.utils import render_to_pdf
+from checkouts.utils import render_to_pdf, email_pdf
 
-from django.db.models import Q, ProtectedError
+from django.db.models import Q
 
 from .tasks import post_checkout_confirmation_email
 
@@ -94,7 +93,6 @@ def edit_admin_account(request, pk):
 @login_required()
 def admin_account_detail(request, pk):
     admin_account = get_object_or_404(User, pk=pk)
-    # checkouts_processed = Checkout.objects.filter(processed_by=admin_account)
     return render(request, 'checkouts/admin-account-detail.html', context={'admin_account': admin_account})
 
 
@@ -102,23 +100,6 @@ def add_new_admin(request):
     if request.method == 'POST':
         form = AddNewAdminAccount(request.POST)
         if form.is_valid():
-            # IF I DO THIS METHOD, IT WILL TRY AND CREATE THE SAME USER TWICE
-            # form.save()
-            # username = form.cleaned_data.get('username')
-            # first_name = form.cleaned_data.get('first_name')
-            # last_name = form.cleaned_data.get('last_name')
-            # email = form.cleaned_data.get('email')
-            # password = form.cleaned_data.get('password1')
-            #
-            # user = User.objects.create_user(
-            #     username=username,
-            #     first_name=first_name,
-            #     last_name=last_name,
-            #     email=email,
-            #     password=password
-            # )
-            # user.save()
-
             user = form.save(commit=False)
             user.save()
             return redirect('admin_account_details', pk=user.pk)
@@ -128,18 +109,15 @@ def add_new_admin(request):
     return render(request, 'checkouts/add-new-admin.html', {'form': form})
 
 
-
 # CHECKOUT VIEWS
 @login_required()
 def all_checkouts(request):
     all_checkouts = Checkout.objects.filter(completed=False).order_by('-due_date')
     today = datetime.today()
-    # template = loader.get_template('checkouts/all-checkouts.html')
     context = {
         'all_checkouts': all_checkouts,
         'today': today
     }
-    # return HttpResponse(template.render(context, request))
     return render(request, 'checkouts/all-checkouts.html', context=context)
 
 
@@ -158,7 +136,6 @@ def past_checkouts(request):
 @login_required()
 def new_checkout(request):
     if request.method == 'POST':
-        # form = NewCheckoutForm(request.POST, user=request.user)
         form = NewCheckoutForm(request.POST)
 
         if form.is_valid():
@@ -176,10 +153,6 @@ def new_checkout(request):
             audio = form.cleaned_data.get('audio')
             misc = form.cleaned_data.get('misc')
 
-            # selected_equipment: <class 'django.db.models.query.QuerySet'>
-            # checkout_student: <class 'checkouts.models.Student'>
-            # new_checkout: <class 'checkouts.models.Checkout'>
-
             # MERGING ALL THE QUERY SETS
             selected_equipment = cameras | lights | computers | projectors | audio | misc
 
@@ -192,7 +165,7 @@ def new_checkout(request):
             new_checkout.save()
 
             # CELERY TASK
-            post_checkout_confirmation_email.delay(checkout_student.pk, new_checkout.pk)
+            post_checkout_confirmation_email.delay(new_checkout.pk)
 
             return redirect('complete_checkout', pk=new_checkout.pk)
     else:
@@ -204,14 +177,11 @@ def new_checkout(request):
 @login_required()
 def complete_checkout(request, pk):
     checkout = get_object_or_404(Checkout, pk=pk)
-    # This is gonna be inaccurate if the student has an active checkout elsewhere
-    # equipment = checkout.student.current_equipment.all()
     return render(request, 'checkouts/complete-checkout.html', context={'checkout': checkout})
 
 
 def completed_checkout_pdf(request, pk):
     checkout = get_object_or_404(Checkout, pk=pk)
-
     cameras = checkout.cameras.all()
     lights = checkout.lights.all()
     computers = checkout.computers.all()
@@ -247,7 +217,6 @@ def return_list_checkouts(request):
 @login_required()
 def return_checkout(request, pk):
     checkout_to_return = Checkout.objects.get(id=pk)
-    # associated_equipment = checkout_to_return.student.current_equipment.all()
 
     cameras = checkout_to_return.cameras.all()
     lights = checkout_to_return.lights.all()
@@ -268,8 +237,6 @@ def return_checkout(request, pk):
                 equipment.past_checkouts.add(checkout_to_return)
                 equipment.save()
 
-            # checkout_to_return.student.current_equipment.clear()
-
             old_notes = checkout_to_return.notes
             new_notes = form.cleaned_data.get('notes')
 
@@ -281,12 +248,9 @@ def return_checkout(request, pk):
                 updated_notes = old_notes + '\n' + new_notes
                 checkout_to_return.notes = updated_notes
 
-            # checkout_to_return.notes = updated_notes
             checkout_to_return.return_date = date.today()
             checkout_to_return.completed = True
-
             checkout_to_return.save()
-            # return_checkout.save()
 
             return redirect('complete_checkout_return', pk=checkout_to_return.pk)
 
@@ -441,6 +405,12 @@ def delete_equipment(request, pk):
 
 # RESERVATION VIEWS
 @login_required()
+def past_reservations(request):
+    past_reservations = Reservation.objects.filter(completed=True).order_by('-pk')
+    return render(request, 'checkouts/past-reservations.html', context={'past_reservations': past_reservations})
+
+
+@login_required()
 def reservation_detail(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk)
     return render(request, 'checkouts/detail-reservation.html', context={'reservation': reservation})
@@ -496,6 +466,19 @@ def deny_pending_reservation(request, pk):
     if request.method == 'POST':
         form = AcceptOrDenyReservation(request.POST)
         if form.is_valid():
+
+            cameras = denied_res.cameras.all()
+            lights = denied_res.lights.all()
+            computers = denied_res.computers.all()
+            projectors = denied_res.projectors.all()
+            audio = denied_res.audio.all()
+            misc = denied_res.misc.all()
+            associated_equipment = cameras | lights | computers | projectors | audio | misc
+            for equipment in associated_equipment:
+                equipment.reservation_request = None
+                equipment.availability = True
+                equipment.save()
+
             denied_res.accepted = False
             denied_res.completed = True
             denied_res.save()
@@ -569,12 +552,10 @@ def new_reservation(request, pk):
 
             selected_equipment = cameras | lights | computers | projectors | audio | misc
             for equipment in selected_equipment:
-                # print(equipment)
-                # print(new_reservation)
-                # equipment.reservation_request.add(new_reservation)
                 equipment.reservation_request = new_reservation
                 equipment.save()
 
+            user.reservation_request = new_reservation
             new_reservation.save()
 
             return redirect('complete_reservation', pk=new_reservation.pk)
@@ -628,10 +609,8 @@ def reservation_checkout(request, pk):
     }
 
     if request.method == 'POST':
-        print("post")
         form = NewCheckoutFromReservation(request.POST, initial=initial_data)
         if form.is_valid():
-            print("valid")
             reservation_checkout = form.save()
             reservation_checkout.processed_by = request.user
             reservation_checkout.notes = form.cleaned_data.get('notes')
@@ -651,8 +630,11 @@ def reservation_checkout(request, pk):
             for equipment in selected_equipment:
                 checkout_user.current_equipment.add(equipment)
                 equipment.current_user = checkout_user
+                equipment.reservation_request = None
                 equipment.availability = False
                 equipment.save()
+
+            checkout_user.reservation_request = None
 
             reservation.completed = True
             reservation_checkout.save()
@@ -666,59 +648,18 @@ def reservation_checkout(request, pk):
     })
 
 
-
-
-# def search_users(request):
-#     users = Student.objects.all()
-#     query = request.GET.get('search')
-#     if query:
-#         print(query)
-#         user = users.objects.filter(
-#             Q(first_name__contains=query) | Q(last_name__contains=query) | Q(id__contains=query)
-#         )
-#         if user:
-#
-#             current_equipment = user.current_equipment.all()
-#             user_past_checkouts = user.objects.order_by('-borrow_date').filter(completed=True, student=user)
-#             print(user)
-#             print(current_equipment)
-#             print(user_past_checkouts)
-#
-#     return render(request, 'checkouts/detail-student.html',
-#                   context={
-#                       'student': user,
-#                       'current_equipment': current_equipment,
-#                       'user_past_checkouts': user_past_checkouts
-#                   })
-
-# ORIGINAL SEARCH
-# def search_users(request):
-#     if request.method == 'POST':
-#         search_text = request.POST['search_text']
-#     else:
-#         search_text = ' '
-#
-#     users = Student.objects.filter(
-#         Q(first_name__contains=search_text) | Q(last_name__contains=search_text) | Q(id__contains=search_text)
-#     )
-#
-#     return render(request, 'checkouts/search-users.html', context={'users': users})
-
-
+# USED IN HEADER
 def autocompleteSearch(request):
     if request.is_ajax():
         search_text = request.GET.get('term', '')
         search_qs = Student.objects.filter(
             Q(first_name__contains=search_text) | Q(last_name__contains=search_text) | Q(school_id__contains=search_text)
         )
-        # print(search_qs)
         results = []
-        # print search_text
         for r in search_qs:
             output = "{} {} ({})".format(r.first_name, r.last_name, r.school_id)
             results.append(output)
         data = json.dumps(results)
-        # print(data)
     else:
         data = 'fail'
     mimetype = 'application/json'

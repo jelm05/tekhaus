@@ -38,8 +38,40 @@
                             <a href="{% url 'student_detail' checkout.student.school_id %}">{{ checkout.student }}</a>
                         </td>
                         <td>
-                            {% for equipment in checkout.student.current_equipment.all %}
-                                {{ equipment }}<br />
+                            {% for cameras in checkout.cameras.all %}
+                                <a href="{% url 'equipment_detail' cameras.id %}">
+                                    {{ cameras }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for lights in checkout.lights.all %}
+                                <a href="{% url 'equipment_detail' lights.id %}">
+                                    {{ lights }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for computers in checkout.computers.all %}
+                                <a href="{% url 'equipment_detail' computers.id %}">
+                                    {{ computers }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for projectors in checkout.projectors.all %}
+                                <a href="{% url 'equipment_detail' projectors.id %}">
+                                    {{ projectors }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for audio in checkout.audio.all %}
+                                <a href="{% url 'equipment_detail' audio.id %}">
+                                    {{ audio }}
+                                </a><br />
+                            {% endfor %}
+
+                            {% for misc in checkout.misc.all %}
+                               <a href="{% url 'equipment_detail' misc.id %}">
+                                    {{ misc }}
+                                </a><br />
                             {% endfor %}
                         </td>
 

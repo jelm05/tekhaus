@@ -16,7 +16,6 @@ import os.path
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -25,7 +24,6 @@ SECRET_KEY = 'vuj2zs%+o++ok-e^+e^1oj6r#lb--nxwixblrl3mk6h7j(cdsd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # STATIC FILES wont be handled by Django when DEBUG is False
-# Django expects the production environment/server to handle static files
 DEBUG = True
 
 ALLOWED_HOSTS = [
@@ -34,17 +32,22 @@ ALLOWED_HOSTS = [
     'localhost'
 ]
 
-# ONLY FOR DEVELOPMENT
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-else:
-    EMAIL_HOST = ''
-    EMAIL_PORT = 587
-    EMAIL_HOST_USER = ''
-    EMAIL_HOST_PASSWORD = ''
-    EMAIL_USE_TLS = True
-    DEFAULT_FROM_EMAIL = 'Tekhaus Team <admin@tekhaus.tech>'
+# MAILHOG VIA DOCKER COMPOSE CONFIG
+EMAIL_HOST = 'smtp-server'
+EMAIL_PORT = '1025'
 
+# DJANGO DEV MAILHOG SERVER - REMOVE LATER
+# EMAIL_HOST = '0.0.0.0'
+# EMAIL_PORT = '1025'
+
+# if DEBUG:
+#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# else:
+#     EMAIL_HOST = '0.0.0.0'
+#     EMAIL_POST = 1025
+#     EMAIL_HOST_USER = ''
+#     EMAIL_HOST_PASSWORD = ''
+#     EMAIL_USE_TLS = False
 
 # Application definition
 INSTALLED_APPS = [
@@ -103,15 +106,11 @@ CACHES = {
     },
 }
 SELECT2_CACHE_BACKEND = 'select2'
-CACHE_PREFIX= 'select2_'
+CACHE_PREFIX = 'select2_'
 
-# SELECT2_JS = 'assets/js/select2.min.js'
-# SELECT2_CSS = 'assets/css/select2.css'
-
+# ORIGINAL
 SELECT2_CSS = '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css'
 SELECT2_JS = '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js'
-
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -123,14 +122,13 @@ DATABASES = {
     }
 }
 
-
 # CELERY SERVICE RABBITMQ BROKER
-CELERY_BROKER_URL = "amqp://tekhaus:checkoutTekhaus1!@localhost/tekeq"
+CELERY_BROKER_URL = "amqp://rabbitmq"
 CELERY_TASK_SERIALIZER = 'json'
+
 # WORKING WITH DJANGO_CELERY_RESULTS
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_CACHE_BACKEND = 'django-cache'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -160,12 +158,13 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+
+STATIC_ROOT = '/static_files/'
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
-# NEED TO MAKE LOGOUT PAGE
-LOGOUT_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = 'login'
 
 

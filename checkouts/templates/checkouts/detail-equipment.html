@@ -25,12 +25,6 @@
                                 </p>
                             {% endif %}
 
-{#                            {% if equipment.reservation_request %}#}
-{#                                <br>#}
-{#                                <h6>Reservation Request:</h6>#}
-{#                                <p>{{ equipment.reservation_request }}</p>#}
-{#                            {% endif %}#}
-
                         </div>
 
                     {% else %}
@@ -107,84 +101,6 @@
             </div>
         </div>
         {% endif %}
-
-
-{#    {% if equipment.reservation_request %}#}
-{#        <div class="row mt-5 pb-1">#}
-{#            <div class="col">#}
-{#                <h5 class="border-bottom">Reservation Requests</h5>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#        <table class="table table-bordered">#}
-{#            <thead>#}
-{#                <tr>#}
-{#                    <th>ID</th>#}
-{#                    <th>Requestor</th>#}
-{#                    <th>Request Date</th>#}
-{#                    <th>Due Date</th>#}
-{#                    <th>Status</th>#}
-{#                </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{##}
-{#                <tr>#}
-{#                    <td>{{ equipment.reservation_request.id }}</td>#}
-{#                    <td>{{ equipment.reservation_request.requested_by }}</td>#}
-{#                    <td>{{ equipment.reservation_request.request_date }}</td>#}
-{#                    <td>{{ equipment.reservation_request.due_date }}</td>#}
-{#                    <td>{{ equipment.reservation_request.accepted }}</td>#}
-{#                </tr>#}
-{##}
-{#            </tbody>#}
-{#        </table>#}
-{##}
-{#    {% endif %}#}
-
-
-
-
-
-{#    {% if is_requested %}#}
-{##}
-{##}
-{#        <table class="table table-bordered">#}
-{#        <thead>#}
-{#            <tr>#}
-{#                <th>ID</th>#}
-{#                <th>Requestor</th>#}
-{#                <th>Request Date</th>#}
-{#                <th>Due Date</th>#}
-{#                <th>Status</th>#}
-{#            </tr>#}
-{#        </thead>#}
-{#        <tbody>#}
-{##}
-{#        {% for reservation in is_requested %}#}
-{##}
-{#            <tr>#}
-{#                <td>{{ reservation.id }}</td>#}
-{#                <td>{{ reservation.requested_by }}</td>#}
-{#                <td>{{ reservation.request_date }}</td>#}
-{#                <td>{{ reservation.due_date }}</td>#}
-{#                <td>{{ reservation.accepted }}</td>#}
-{#            </tr>#}
-{#        {% endfor %}#}
-{##}
-{#            </tbody>#}
-{#        </table>#}
-{#    {% else %}#}
-{#    <div class="row">#}
-{#        <div class="col">#}
-{#            <p>This piece of equipment hasn't been checked out yet.</p>#}
-{#        </div>#}
-{#    </div>#}
-{#    {% endif %}#}
-
-
-
-
-
 
     <div class="row mt-5 pb-1">
         <div class="col">

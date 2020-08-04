@@ -5,6 +5,7 @@ python manage.py collectstatic --noinput  # Collect static files
 
 # start rabbitmq services
 #service rabbitmq-server start
+
 #rabbitmq-plugins enable rabbitmq_management
 #rabbitmqctl add_user tekhaus checkoutTekhaus1!
 #rabbitmqctl add_vhost tekeq
@@ -13,6 +14,6 @@ python manage.py collectstatic --noinput  # Collect static files
 
 # start Gunicorn processes
 echo Starting Gunicorn.
-exec gunicorn tekhaus.wsgi:application \
-      --bind 0.0.0.0:8000
+exec gunicorn -w 4 tekhaus.wsgi:application --bind 0.0.0.0:8000
+
 

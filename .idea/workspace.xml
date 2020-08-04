@@ -2,176 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docker/prod/nginx/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/prod/nginx/docker_nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/autocomplete.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/changelists.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/forms.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/responsive_rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/vendor/select2/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/css/widgets.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/fonts/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/fonts/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/calendar-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/gis/move_vertex_off.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/gis/move_vertex_on.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-addlink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-alert.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-calendar.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-changelink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-clock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-deletelink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-no.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-unknown-alt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-unknown.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-viewlink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/icon-yes.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/inline-delete.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/selector-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/sorting-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/tooltag-add.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/img/tooltag-arrowright.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/SelectBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/SelectFilter2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/actions.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/autocomplete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/cancel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/change_form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/collapse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/collapse.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/inlines.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/inlines.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/jquery.init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/popup_response.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/prepopulate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/prepopulate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/prepopulate_init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/timeparse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/urlify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/select2.full.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/css/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/django_select2/django_select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/img/SVA_primary_color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/css/bootstrap-4.3.1.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/css/calendar/dayGrid-main.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/css/calendar/fullCalendar-main.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/css/calendar/list-main.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/css/dataTables-1.10.20.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/css/font-awesome-4.1.0.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/bootstrap-4.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/calendar/dayGrid-main.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/calendar/fullCalendar-main.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/calendar/list-main.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/datatables-1.10.20.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/datatables-bootstrap-1.10.20.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/jquery-ui-1.12.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/lib/js/popper-1.14.7.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/past-reservations.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password_reset_html_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password_reset_subject.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/img/SVA_primary_color.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/SVA_primary_color.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/css/bootstrap-4.3.1.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/css/bootstrap-4.3.1.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/css/calendar/dayGrid-main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/css/calendar/dayGrid-main.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/css/calendar/fullCalendar-main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/css/calendar/fullCalendar-main.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/css/calendar/list-main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/css/calendar/list-main.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/css/dataTables-1.10.20.bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/css/dataTables-1.10.20.bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/css/font-awesome-4.1.0.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/css/font-awesome-4.1.0.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/bootstrap-4.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/bootstrap-4.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/calendar/dayGrid-main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/calendar/dayGrid-main.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/calendar/fullCalendar-main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/calendar/fullCalendar-main.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/calendar/list-main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/calendar/list-main.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/datatables-1.10.20.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/datatables-1.10.20.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/datatables-bootstrap-1.10.20.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/datatables-bootstrap-1.10.20.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/jquery-ui-1.12.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/jquery-ui-1.12.0.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/static/lib/js/popper-1.14.7.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/lib/js/popper-1.14.7.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-checkouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-checkouts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-equipment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-equipment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout-from-reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout-from-reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new-reservation-start.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-reservation-start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-accept.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-accept.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-deny.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-deny.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/return-checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/return-checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/return-list-checkouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/return-list-checkouts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/search-users.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/password-change.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-change.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-done.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-done.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-subject.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/password_reset_email.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkouts/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/prod/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/prod/nginx/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/prod/nginx/docker_nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/prod/nginx/docker_nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tekhaus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="930f258c-530f-40a4-b172-bb420dc64660" />
   <component name="ProjectId" id="1OnWGAEx7X6IzvTnk4et1aH2wTT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -201,12 +66,9 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/checkouts/templates/registration" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/docker/prod/app" />
@@ -214,8 +76,11 @@
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/checkouts/templates" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/checkouts/templates/registration" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.tekhaus">
     <configuration name="tekhaus" type="Python.DjangoServer" factoryName="Django server">
       <module name="tekhaus" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,7 +105,26 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.web: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="web" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.web: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -318,12 +202,15 @@
       <workItem from="1593450836165" duration="28503000" />
       <workItem from="1595529264864" duration="996000" />
       <workItem from="1595530275508" duration="37000" />
-      <workItem from="1595530320621" duration="20334000" />
+      <workItem from="1595530320621" duration="33431000" />
+      <workItem from="1595964291166" duration="15718000" />
+      <workItem from="1596211439845" duration="8662000" />
+      <workItem from="1596488950994" duration="14219000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
@@ -352,40 +239,40 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="811" y="530" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593813378091" />
-    <state x="858" y="431" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586894527793">
-      <screen x="0" y="23" width="2560" height="1417" />
-    </state>
-    <state x="858" y="431" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1586894527793" />
     <state x="1061" y="442" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593456164467">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1061" y="442" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593456164467" />
-    <state width="2518" height="377" key="GridCell.Tab.0.bottom" timestamp="1594085001045">
+    <state x="537" y="266" key="#docker-compose.yml.web:_Compose_Deployment" timestamp="1595730784789">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="2518" height="377" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1594085001045" />
-    <state width="2518" height="377" key="GridCell.Tab.0.bottom/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593817806873" />
+    <state x="537" y="266" key="#docker-compose.yml.web:_Compose_Deployment/0.23.1680.1027@0.23.1680.1027" timestamp="1595730784789" />
+    <state width="2518" height="375" key="GridCell.Tab.0.bottom" timestamp="1596564240359">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1865" height="363" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1596123300586" />
+    <state width="2518" height="375" key="GridCell.Tab.0.bottom/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564240359" />
     <state width="1638" height="157" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073642" />
     <state width="2135" height="218" key="GridCell.Tab.0.bottom/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744704" />
-    <state width="2518" height="377" key="GridCell.Tab.0.center" timestamp="1594085001043">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="2518" height="375" key="GridCell.Tab.0.center" timestamp="1596564240359">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="377" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1594085001043" />
-    <state width="2518" height="377" key="GridCell.Tab.0.center/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593817806872" />
+    <state width="1865" height="363" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1596123300585" />
+    <state width="2518" height="375" key="GridCell.Tab.0.center/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564240359" />
     <state width="1638" height="157" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073641" />
     <state width="2135" height="218" key="GridCell.Tab.0.center/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744703" />
-    <state width="2518" height="377" key="GridCell.Tab.0.left" timestamp="1594085001034">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="2518" height="375" key="GridCell.Tab.0.left" timestamp="1596564240358">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="377" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1594085001034" />
-    <state width="2518" height="377" key="GridCell.Tab.0.left/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593817806871" />
+    <state width="1865" height="363" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1596123300584" />
+    <state width="2518" height="375" key="GridCell.Tab.0.left/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564240358" />
     <state width="1638" height="157" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073641" />
     <state width="2135" height="218" key="GridCell.Tab.0.left/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744702" />
-    <state width="2518" height="377" key="GridCell.Tab.0.right" timestamp="1594085001044">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="2518" height="375" key="GridCell.Tab.0.right" timestamp="1596564240359">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="377" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1594085001044" />
-    <state width="2518" height="377" key="GridCell.Tab.0.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593817806872" />
+    <state width="1865" height="363" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1596123300585" />
+    <state width="2518" height="375" key="GridCell.Tab.0.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564240359" />
     <state width="1638" height="157" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073642" />
     <state width="2135" height="218" key="GridCell.Tab.0.right/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744703" />
     <state width="2229" height="161" key="GridCell.Tab.1.bottom" timestamp="1590334013063">
@@ -408,10 +295,11 @@
     </state>
     <state width="2229" height="161" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590334013063" />
     <state width="2229" height="161" key="GridCell.Tab.1.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1590081371247" />
-    <state x="280" y="254" key="SettingsEditor" timestamp="1592928859174">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="427" y="342" key="SettingsEditor" timestamp="1595969970891">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="280" y="254" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1592928859174" />
+    <state x="427" y="342" key="SettingsEditor/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1595969970891" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1593455468085">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
@@ -420,15 +308,15 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="737" y="305" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591644304914" />
-    <state x="931" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591037376294">
+    <state x="931" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596562841198">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="611" y="448" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.1027@0.23.1680.1027" timestamp="1588215572702" />
-    <state x="931" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1591037376294" />
-    <state x="1152" y="326" width="670" height="158" key="search.everywhere.popup" timestamp="1591736390832">
+    <state x="931" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596562841198" />
+    <state x="1152" y="326" width="670" height="676" key="search.everywhere.popup" timestamp="1596564694528">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1152" y="326" width="670" height="676" key="search.everywhere.popup/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1589826326754" />
+    <state x="1152" y="326" width="670" height="676" key="search.everywhere.popup/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564694528" />
     <state x="1152" y="326" width="670" height="158" key="search.everywhere.popup/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591736390832" />
   </component>
   <component name="XDebuggerManager">

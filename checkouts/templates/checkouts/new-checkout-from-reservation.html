@@ -97,50 +97,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
-
-{#            <form class="new-checkout" method="post">#}
-{#                {% csrf_token %}#}
-{##}
-{#                <div class="form-group row">#}
-{#                    <div class="col-sm-6">#}
-{##}
-{#                        <label for="requester">Requester:</label>#}
-{#                        <input name="requested_by" class="form-control" disabled required id="id_requested_by" value="{{ requester }}">#}
-{##}
-{#                    </div>#}
-{##}
-{#                    <div class="col-sm-6">#}
-{#                        <label for="request_date">Request Date:</label>#}
-{#                        <input type="text" name="request+date" value="{{ reservation.request_date|date:"m/d/Y" }}" class="form-control datepicker" required="" id="id_request_date">#}
-{#                    </div>#}
-{#                </div>#}
-{##}
-{##}
-{#                <div class="form-group row">#}
-{#                    <div class="col-sm-6">#}
-{##}
-{#                        <label for="equipment">Equipment:</label>#}
-{#                        {% if equipment %}#}
-{#                            {% for eq in equipment %}#}
-{##}
-{#                                <input name="requested_equipment_{{ eq.id }}" class="form-control mb-2" disabled required id="id_requested_equipment_{{ eq.id }}" value="{{ eq }}">#}
-{##}
-{#                            {% endfor %}#}
-{#                        {% endif %}#}
-{##}
-{#                    </div>#}
-{##}
-{#                    <div class="col-sm-6">#}
-{#                        <label for="due_date">Due Date:</label>#}
-{#                        <input type="text" name="due_date" value="{{ reservation.due_date|date:"m/d/Y" }}" class="form-control datepicker" required="" id="id_due_date">#}
-{#                    </div>#}
-{##}
-{#                </div>#}
-{##}
-{#                <button type="submit" class="btn btn-primary">Submit</button>#}
-{##}
-{#            </form>#}
-
         </div>
     </div>
 

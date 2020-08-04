@@ -1,7 +1,10 @@
 version: '3'
 
+volumes:
+  static_files:
+
 services:
-  web:
+  web: &web
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,15 +18,30 @@ services:
   nginx:
     build:
       context: .
-#      dockerfile: docker/prod/nginx/Dockerfile
+      dockerfile: docker/prod/nginx/Dockerfile
     volumes:
       - static_files:/static_files
     ports:
-      - "8080:80"
+      - "80:80"
     depends_on:
-      - web
-#  rabbitmq:
-#    image: library/rabbitmq:3.8.5-alpine
+      - rabbitmq
+      - celery_worker
+  # Demo SMTP server, will have to be replaced
+  smtp-server:
+    image: mailhog/mailhog
+    expose:
+      - 1025
+      - 8025
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+  rabbitmq:
+    image: rabbitmq:3.8-alpine
+  celery_worker:
+    # Use the anchor name (like a label) from line 7, essentially means "start another instance of that"
+    <<: *web
+    command: celery -A tekhaus worker -l info
+    ports: [] #this disables the ports that are opened in web, otherwise you get an error message saying they're taken
+    depends_on:
+      - rabbitmq
 
-volumes:
-  static_files:

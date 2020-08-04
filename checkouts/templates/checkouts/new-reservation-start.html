@@ -6,18 +6,6 @@
         <h2 class="h2">New Reservation</h2>
     </div>
 
-{#    {% if form.errors %}#}
-{#        {% for field in form %}#}
-{#            {% for error in field.errors %}#}
-{#                <div class="alert alert-danger">{{ error|escape }}</div>#}
-{#            {% endfor %}#}
-{#        {% endfor %}#}
-{##}
-{#        {% for error in form.non_field_errors %}#}
-{#            <div class="alert alert-danger">{{ error|escape }}</div>#}
-{#        {% endfor %}#}
-{#    {% endif %}#}
-
     {% if form.non_field_errors %}
         <div class="alert alert-danger" role="alert">
             {% for err in form.non_field_errors %}
@@ -48,57 +36,8 @@
                 </div>
             </form>
 
-{#            <form class="reservation-id-search" method="get">#}
-{#                <div class="input-group mb-3">#}
-{#                    <input type="number" class="form-control" id="reservation-search" name="search" placeholder="Search for your unique ID" />#}
-{#                    <div class="input-group-append">#}
-{#                        <input class="btn btn-outline-secondary" type="submit" value="Search">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </form>#}
-
         </div>
     </div>
-
-{#    <div class="row mt-3">#}
-{#        <div class="col-md-12 mx-auto">#}
-{##}
-{#            <div class="question">#}
-{#                <p>Have you made a reservation before?</p>#}
-{#                <button type="button" class="btn btn-primary" id="yes">Yes</button>#}
-{#                <button type="button" class="btn btn-danger" id="no">No</button>#}
-{#            </div>#}
-{##}
-{#        </div>#}
-{#    </div>#}
-
-{#    <script type="text/javascript">#}
-{#    $(document).ready(function(){#}
-{##}
-{#        let $q = $(".question")#}
-{##}
-{#        $('#yes').on('click', function(){#}
-{#            let form = `<form class="reservation-id-search" method="get">#}
-{#                <div class="input-group mb-3">#}
-{#                    <input type="text" class="form-control" id="reservation-search" name="search" placeholder="Search for your unique ID" />#}
-{#                    <div class="input-group-append">#}
-{#                        <input class="btn btn-outline-secondary" type="submit" value="Search">#}
-{#                    </div>#}
-{#                </div>#}
-{#            </form>`;#}
-{##}
-{#            $q.html(form);#}
-{#            console.log("yes")#}
-{#        });#}
-{##}
-{#        $('#no').on('click', function(){#}
-{#            $q.html("You must visit your program administrator to get added to the system first.");#}
-{#        });#}
-{##}
-{##}
-{#    });#}
-{#    </script>#}
-
 
 {% endblock %}
 
