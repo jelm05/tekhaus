@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +175,8 @@
       <workItem from="1596211439845" duration="8662000" />
       <workItem from="1596488950994" duration="14410000" />
       <workItem from="1596571505430" duration="5091000" />
-      <workItem from="1597071648161" duration="12450000" />
+      <workItem from="1597071648161" duration="13380000" />
+      <workItem from="1597101605615" duration="116000" />
     </task>
     <servers />
   </component>
@@ -265,10 +267,10 @@
     </state>
     <state width="2229" height="161" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590334013063" />
     <state width="2229" height="161" key="GridCell.Tab.1.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1590081371247" />
-    <state x="280" y="254" key="SettingsEditor" timestamp="1597074610237">
+    <state x="280" y="254" key="SettingsEditor" timestamp="1597101720488">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="280" y="254" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1597074610237" />
+    <state x="280" y="254" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1597101720488" />
     <state x="427" y="342" key="SettingsEditor/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596820468948" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1593455468085">
       <screen x="0" y="23" width="2560" height="1417" />
