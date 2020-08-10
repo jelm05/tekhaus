@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - static_files:/static_files/
-    env_file: tekhaus/.env
+    env_file: .env
     ports:
       - "8000:8000"
     entrypoint:

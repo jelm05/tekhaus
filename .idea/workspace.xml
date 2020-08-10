@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,15 +38,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/checkouts/templates/registration" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/tekhaus" />
       <recent name="$PROJECT_DIR$/docker/prod/app" />
       <recent name="$PROJECT_DIR$/checkouts/templates/checkouts" />
       <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/checkouts/templates" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/checkouts/templates/registration" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.tekhaus">
@@ -174,7 +176,7 @@
       <workItem from="1596211439845" duration="8662000" />
       <workItem from="1596488950994" duration="14410000" />
       <workItem from="1596571505430" duration="5091000" />
-      <workItem from="1597071648161" duration="7545000" />
+      <workItem from="1597071648161" duration="8389000" />
     </task>
     <servers />
   </component>
