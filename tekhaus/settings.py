@@ -139,11 +139,16 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
 
 # STATIC_ROOT = '/static_files/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+# FOR HEROKU DEPLOYMENT
+os.makedirs(STATIC_TMP, exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
