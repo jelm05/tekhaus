@@ -7,7 +7,7 @@ from celery.utils.log import get_task_logger
 
 
 from checkouts.models import Checkout
-from checkouts.utils import email_pdf
+from checkouts.utils import email_pdf, grab_all_equipment
 
 logger = get_task_logger(__name__)
 
@@ -27,13 +27,17 @@ def post_checkout_confirmation_email(checkout_pk=None):
     to_address = checkout.student.primary_email
     # bcc_address = checkout.processed_by.email
 
-    cameras = checkout.cameras.all()
-    lights = checkout.lights.all()
-    computers = checkout.computers.all()
-    projectors = checkout.projectors.all()
-    audio = checkout.audio.all()
-    misc = checkout.misc.all()
-    equipment = cameras | lights | computers | projectors | audio | misc
+    # ORIGINAL:
+    # cameras = checkout.cameras.all()
+    # lights = checkout.lights.all()
+    # computers = checkout.computers.all()
+    # projectors = checkout.projectors.all()
+    # audio = checkout.audio.all()
+    # misc = checkout.misc.all()
+    # equipment = cameras | lights | computers | projectors | audio | misc
+
+    # TRY UTIL:
+    equipment = grab_all_equipment(checkout)
 
     data = {
         'checkout_number': checkout,

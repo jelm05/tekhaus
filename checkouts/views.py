@@ -13,7 +13,7 @@ from datetime import datetime, date
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from checkouts.utils import render_to_pdf, email_pdf
+from checkouts.utils import render_to_pdf, grab_all_equipment
 
 from django.db.models import Q
 
@@ -32,7 +32,7 @@ def error500(request):
 
 def calendar(request):
     active_checkouts = Checkout.objects.filter(completed=False)
-    accepted_reservations = Reservation.objects.filter(accepted=True)
+    accepted_reservations = Reservation.objects.filter(accepted=True, completed=False)
     pending_reservations = Reservation.objects.filter(accepted=False, completed=False)
     return render(request, 'checkouts/calendar.html', context={
         'active_checkouts': active_checkouts,
@@ -182,13 +182,18 @@ def complete_checkout(request, pk):
 
 def completed_checkout_pdf(request, pk):
     checkout = get_object_or_404(Checkout, pk=pk)
-    cameras = checkout.cameras.all()
-    lights = checkout.lights.all()
-    computers = checkout.computers.all()
-    projectors = checkout.projectors.all()
-    audio = checkout.audio.all()
-    misc = checkout.misc.all()
-    equipment = cameras | lights | computers | projectors | audio | misc
+
+    # ORIGINAL:
+    # cameras = checkout.cameras.all()
+    # lights = checkout.lights.all()
+    # computers = checkout.computers.all()
+    # projectors = checkout.projectors.all()
+    # audio = checkout.audio.all()
+    # misc = checkout.misc.all()
+    # equipment = cameras | lights | computers | projectors | audio | misc
+
+    # TRY UTIL
+    equipment = grab_all_equipment(checkout)
 
     data = {
         'checkout_number': checkout,
@@ -218,13 +223,17 @@ def return_list_checkouts(request):
 def return_checkout(request, pk):
     checkout_to_return = Checkout.objects.get(id=pk)
 
-    cameras = checkout_to_return.cameras.all()
-    lights = checkout_to_return.lights.all()
-    computers = checkout_to_return.computers.all()
-    projectors = checkout_to_return.projectors.all()
-    audio = checkout_to_return.audio.all()
-    misc = checkout_to_return.misc.all()
-    associated_equipment = cameras | lights | computers | projectors | audio | misc
+    # ORIGINAL
+    # cameras = checkout_to_return.cameras.all()
+    # lights = checkout_to_return.lights.all()
+    # computers = checkout_to_return.computers.all()
+    # projectors = checkout_to_return.projectors.all()
+    # audio = checkout_to_return.audio.all()
+    # misc = checkout_to_return.misc.all()
+    # associated_equipment = cameras | lights | computers | projectors | audio | misc
+
+    # TRY UTIL
+    associated_equipment = grab_all_equipment(checkout_to_return)
 
     if request.method == 'POST':
         form = ReturnCheckoutForm(request.POST)
@@ -467,13 +476,18 @@ def deny_pending_reservation(request, pk):
         form = AcceptOrDenyReservation(request.POST)
         if form.is_valid():
 
-            cameras = denied_res.cameras.all()
-            lights = denied_res.lights.all()
-            computers = denied_res.computers.all()
-            projectors = denied_res.projectors.all()
-            audio = denied_res.audio.all()
-            misc = denied_res.misc.all()
-            associated_equipment = cameras | lights | computers | projectors | audio | misc
+            # ORIGINAL
+            # cameras = denied_res.cameras.all()
+            # lights = denied_res.lights.all()
+            # computers = denied_res.computers.all()
+            # projectors = denied_res.projectors.all()
+            # audio = denied_res.audio.all()
+            # misc = denied_res.misc.all()
+            # associated_equipment = cameras | lights | computers | projectors | audio | misc
+
+            # TRY UTIL
+            associated_equipment = grab_all_equipment(denied_res)
+
             for equipment in associated_equipment:
                 equipment.reservation_request = None
                 equipment.availability = True
@@ -571,13 +585,17 @@ def complete_reservation(request, pk):
 def completed_reservation_pdf(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk)
 
-    cameras = reservation.cameras.all()
-    lights = reservation.lights.all()
-    computers = reservation.computers.all()
-    projectors = reservation.projectors.all()
-    audio = reservation.audio.all()
-    misc = reservation.misc.all()
-    equipment = cameras | lights | computers | projectors | audio | misc
+    # ORIGINAL
+    # cameras = reservation.cameras.all()
+    # lights = reservation.lights.all()
+    # computers = reservation.computers.all()
+    # projectors = reservation.projectors.all()
+    # audio = reservation.audio.all()
+    # misc = reservation.misc.all()
+    # equipment = cameras | lights | computers | projectors | audio | misc
+
+    # TRY UTIL
+    equipment = grab_all_equipment(reservation)
 
     data = {
         'reservation_number': reservation,

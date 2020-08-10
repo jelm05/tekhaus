@@ -2,40 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d59911d6-a84d-4455-86f9-4a66e41c53a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/past-reservations.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password_reset_html_email.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkouts/templates/registration/password_reset_subject.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tekhaus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tekhaus.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-checkouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-checkouts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/all-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/all-equipment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-equipment.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/detail-equipment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout-from-reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout-from-reservation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/new-reservation-start.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/new-reservation-start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-accept.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-accept.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-deny.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/pending-res-deny.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/return-checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/return-checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/return-list-checkouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/checkouts/return-list-checkouts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/search-users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/checkouts/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/password-change.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-change.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-done.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/templates/registration/password-reset-subject.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/templates/registration/password_reset_email.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkouts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkouts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkouts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/prod/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/prod/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/prod/nginx/docker_nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/prod/nginx/docker_nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tekhaus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tekhaus/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +44,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -205,7 +183,9 @@
       <workItem from="1595530320621" duration="33431000" />
       <workItem from="1595964291166" duration="15718000" />
       <workItem from="1596211439845" duration="8662000" />
-      <workItem from="1596488950994" duration="14219000" />
+      <workItem from="1596488950994" duration="14410000" />
+      <workItem from="1596571505430" duration="5091000" />
+      <workItem from="1597071648161" duration="4213000" />
     </task>
     <servers />
   </component>
@@ -235,10 +215,10 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="914" y="417" key="#Inspections/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593453186873" />
-    <state x="811" y="530" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593813378091">
+    <state x="811" y="530" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596821017766">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="811" y="530" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1593813378091" />
+    <state x="811" y="530" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596821017766" />
     <state x="1061" y="442" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593456164467">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
@@ -247,32 +227,32 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="537" y="266" key="#docker-compose.yml.web:_Compose_Deployment/0.23.1680.1027@0.23.1680.1027" timestamp="1595730784789" />
-    <state width="2518" height="375" key="GridCell.Tab.0.bottom" timestamp="1596564240359">
+    <state width="2518" height="375" key="GridCell.Tab.0.bottom" timestamp="1596825435253">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1865" height="363" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1596123300586" />
-    <state width="2518" height="375" key="GridCell.Tab.0.bottom/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564240359" />
+    <state width="2518" height="375" key="GridCell.Tab.0.bottom/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596825435253" />
     <state width="1638" height="157" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073642" />
     <state width="2135" height="218" key="GridCell.Tab.0.bottom/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744704" />
-    <state width="2518" height="375" key="GridCell.Tab.0.center" timestamp="1596564240359">
+    <state width="2518" height="375" key="GridCell.Tab.0.center" timestamp="1596825435253">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1865" height="363" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1596123300585" />
-    <state width="2518" height="375" key="GridCell.Tab.0.center/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564240359" />
+    <state width="2518" height="375" key="GridCell.Tab.0.center/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596825435253" />
     <state width="1638" height="157" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073641" />
     <state width="2135" height="218" key="GridCell.Tab.0.center/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744703" />
-    <state width="2518" height="375" key="GridCell.Tab.0.left" timestamp="1596564240358">
+    <state width="2518" height="375" key="GridCell.Tab.0.left" timestamp="1596825435253">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1865" height="363" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1596123300584" />
-    <state width="2518" height="375" key="GridCell.Tab.0.left/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564240358" />
+    <state width="2518" height="375" key="GridCell.Tab.0.left/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596825435253" />
     <state width="1638" height="157" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073641" />
     <state width="2135" height="218" key="GridCell.Tab.0.left/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744702" />
-    <state width="2518" height="375" key="GridCell.Tab.0.right" timestamp="1596564240359">
+    <state width="2518" height="375" key="GridCell.Tab.0.right" timestamp="1596825435253">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1865" height="363" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1596123300585" />
-    <state width="2518" height="375" key="GridCell.Tab.0.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596564240359" />
+    <state width="2518" height="375" key="GridCell.Tab.0.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596825435253" />
     <state width="1638" height="157" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1592941073642" />
     <state width="2135" height="218" key="GridCell.Tab.0.right/2560.413.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1591735744703" />
     <state width="2229" height="161" key="GridCell.Tab.1.bottom" timestamp="1590334013063">
@@ -295,11 +275,11 @@
     </state>
     <state width="2229" height="161" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590334013063" />
     <state width="2229" height="161" key="GridCell.Tab.1.right/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1590081371247" />
-    <state x="427" y="342" key="SettingsEditor" timestamp="1595969970891">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="280" y="254" key="SettingsEditor" timestamp="1597074610237">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="280" y="254" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1592928859174" />
-    <state x="427" y="342" key="SettingsEditor/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1595969970891" />
+    <state x="280" y="254" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1597074610237" />
+    <state x="427" y="342" key="SettingsEditor/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596820468948" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1593455468085">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
@@ -311,7 +291,6 @@
     <state x="931" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596562841198">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="611" y="448" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.1027@0.23.1680.1027" timestamp="1588215572702" />
     <state x="931" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1417/2560.413.1680.1027@0.23.2560.1417" timestamp="1596562841198" />
     <state x="1152" y="326" width="670" height="676" key="search.everywhere.popup" timestamp="1596564694528">
       <screen x="0" y="23" width="2560" height="1417" />

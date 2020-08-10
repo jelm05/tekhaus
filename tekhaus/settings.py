@@ -12,42 +12,26 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import os.path
+import environ
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+# Read .env file
+environ.Env.read_env()
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
+ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vuj2zs%+o++ok-e^+e^1oj6r#lb--nxwixblrl3mk6h7j(cdsd'
+DEBUG = env('DEBUG')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# STATIC FILES wont be handled by Django when DEBUG is False
-DEBUG = True
-
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    '0.0.0.0',
-    'localhost'
-]
+SECRET_KEY = env('SECRET_KEY')
 
 # MAILHOG VIA DOCKER COMPOSE CONFIG
 EMAIL_HOST = 'smtp-server'
 EMAIL_PORT = '1025'
-
-# DJANGO DEV MAILHOG SERVER - REMOVE LATER
-# EMAIL_HOST = '0.0.0.0'
-# EMAIL_PORT = '1025'
-
-# if DEBUG:
-#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# else:
-#     EMAIL_HOST = '0.0.0.0'
-#     EMAIL_POST = 1025
-#     EMAIL_HOST_USER = ''
-#     EMAIL_HOST_PASSWORD = ''
-#     EMAIL_USE_TLS = False
 
 # Application definition
 INSTALLED_APPS = [
@@ -108,12 +92,8 @@ CACHES = {
 SELECT2_CACHE_BACKEND = 'select2'
 CACHE_PREFIX = 'select2_'
 
-# ORIGINAL
 SELECT2_CSS = '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css'
 SELECT2_JS = '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js'
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -123,7 +103,8 @@ DATABASES = {
 }
 
 # CELERY SERVICE RABBITMQ BROKER
-CELERY_BROKER_URL = "amqp://rabbitmq"
+# CELERY_BROKER_URL = "amqp://rabbitmq"
+CELERY_BROKER_URL = env.str('CELERY_BROKER_URL', default='amqp://rabbitmq')
 CELERY_TASK_SERIALIZER = 'json'
 
 # WORKING WITH DJANGO_CELERY_RESULTS

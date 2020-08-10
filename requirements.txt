@@ -4,6 +4,7 @@ celery==4.4.6
 Django==2.2.7
 django-appconf==1.0.3
 django-celery-results==1.2.1
+django-environ==0.4.5
 django-jquery==3.1.0
 django-select2==7.1.1
 future==0.18.2
